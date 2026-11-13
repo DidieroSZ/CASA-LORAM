@@ -1,0 +1,42 @@
+
+:root { 
+    --color-brand-deep: #2E1E13;
+    --color-brand-sand: #D0AA7F;
+    --color-brand-ivory: #F7EFE3;
+    --color-brand-coffee: #4F2E19;
+    --color-white: #FFFFFF;
+    --color-black: #111;
+
+    --Pad8:8px; 
+    --Pad16:16px; 
+    --Pad32:32px; 
+}
+
+
+* { 
+    margin:0; 
+    padding:0; 
+    box-sizing:border-box; 
+} 
+html { 
+    scroll-behavior:smooth; 
+} 
+
+
+/** GENERAL STYLES  */
+.d-flexx{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.d-row{
+    flex-direction: row;
+}
+.d-col{
+    flex-direction: column;
+}
+
+.page-shell {
+    width: min(1180px, calc(100% - 96px));
+    margin: 0 auto;
+}
