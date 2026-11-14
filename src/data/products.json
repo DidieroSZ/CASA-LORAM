@@ -1,0 +1,789 @@
+{
+  "products": [
+    {
+      "id": "demo-bota-rancho",
+      "name": "Bota Rancho de Res",
+      "typeId": "botas",
+      "active": true,
+      "brand": "Malcreado",
+      "sku": "MUESTRA-BOT-001",
+      "price": 3850,
+      "colorId": "cafe-oscuro",
+      "colorName": "Café oscuro",
+      "colorHex": "#553322",
+      "material": "Piel de res",
+      "skinName": "Res",
+      "last": "Bulldog",
+      "sizes": [
+        "25",
+        "26",
+        "27",
+        "28",
+        "29",
+        "30"
+      ],
+      "imageKey": "botas",
+      "imageAlt": "Botas western de piel café con jeans",
+      "description": "Modelo de referencia en piel de res café, con silueta western clásica y bordado discreto en la punta.",
+      "variants": [
+        {
+          "name": "Café oscuro",
+          "color": "Café oscuro"
+        }
+      ]
+    },
+    {
+      "id": "demo-botin-urbano",
+      "name": "Botín Urbano de Piel",
+      "typeId": "botines",
+      "active": true,
+      "brand": "Ariat",
+      "sku": "MUESTRA-BTN-002",
+      "price": 3290,
+      "colorId": "miel",
+      "colorName": "Miel",
+      "colorHex": "#98633e",
+      "material": "Piel de res",
+      "skinName": "Res",
+      "last": "Oval",
+      "sizes": [
+        "25",
+        "26",
+        "27",
+        "28",
+        "29"
+      ],
+      "imageKey": "botines",
+      "imageAlt": "Detalle western de calzado y accesorios de piel",
+      "description": "Propuesta de muestra de corte bajo para combinar el carácter vaquero con un perfil versátil.",
+      "variants": [
+        {
+          "name": "Miel",
+          "color": "Miel"
+        }
+      ]
+    },
+    {
+      "id": "demo-texana-lana",
+      "name": "Texana Sierra 10X",
+      "typeId": "texanas",
+      "active": true,
+      "brand": "Correcaminos",
+      "sku": "MUESTRA-TEX-003",
+      "price": 2450,
+      "colorId": "arena",
+      "colorName": "Arena",
+      "colorHex": "#c8ad82",
+      "material": "Lana",
+      "quality": "10X",
+      "style": "Horma tradicional",
+      "sizes": [
+        "55",
+        "56",
+        "57",
+        "58",
+        "59"
+      ],
+      "imageKey": "texanas",
+      "imageAlt": "Figura con texana al atardecer en el campo",
+      "description": "Ejemplo de texana de inspiración clásica en tono arena, pensada para completar un conjunto western.",
+      "variants": [
+        {
+          "name": "Arena",
+          "color": "Arena"
+        }
+      ]
+    },
+    {
+      "id": "demo-sombrero-sombravista",
+      "name": "Sombrero Sombravista",
+      "typeId": "sombreros",
+      "active": true,
+      "brand": "Tombstone",
+      "sku": "MUESTRA-SOM-004",
+      "price": 1680,
+      "colorId": "negro",
+      "colorName": "Negro",
+      "colorHex": "#28231f",
+      "material": "Papel arroz",
+      "style": "Copa clásica",
+      "sizes": [
+        "56",
+        "57",
+        "58",
+        "59"
+      ],
+      "imageKey": "sombreros",
+      "imageAlt": "Retrato western con sombrero negro",
+      "description": "Referencia de sombrero de copa clásica y ala amplia, en una silueta sobria de inspiración ranchera.",
+      "variants": [
+        {
+          "name": "Negro",
+          "color": "Negro"
+        }
+      ]
+    },
+    {
+      "id": "demo-cinturon-tradicion",
+      "name": "Cinturón Tradición",
+      "typeId": "cinturones",
+      "active": true,
+      "brand": "Almeida",
+      "sku": "MUESTRA-CIN-005",
+      "price": 1190,
+      "colorId": "chocolate",
+      "colorName": "Chocolate",
+      "colorHex": "#4c2e20",
+      "material": "Piel de res",
+      "skinName": "Res",
+      "sizes": [
+        "30",
+        "32",
+        "34",
+        "36",
+        "38",
+        "40"
+      ],
+      "imageKey": "cinturones",
+      "imageAlt": "Conjunto western con cinturones de hebilla",
+      "description": "Ejemplo de cinturón de piel en tono chocolate, con presencia clásica para acompañar prendas vaqueras.",
+      "variants": [
+        {
+          "name": "Chocolate",
+          "color": "Chocolate"
+        }
+      ]
+    },
+    {
+      "id": "demo-bota-bordado-rancho",
+      "name": "Bota Bordado Rancho",
+      "typeId": "botas",
+      "active": true,
+      "brand": "Malcreado",
+      "sku": "MUESTRA-BOT-101",
+      "price": 4290,
+      "colorId": "cafe-cognac",
+      "colorName": "Cognac",
+      "colorHex": "#8a4e2b",
+      "material": "Piel de res",
+      "skinName": "Res",
+      "last": "Bulldog",
+      "sizes": [
+        "25",
+        "26",
+        "27",
+        "28",
+        "29",
+        "30"
+      ],
+      "imageKey": "bota_01.png",
+      "imageAlt": "Bota western café con bordado en el tubo",
+      "description": "Bota de muestra en tono cognac, con bordado western y silueta de caña alta.",
+      "variants": [
+        {
+          "name": "Cognac",
+          "color": "Cognac"
+        }
+      ]
+    },
+    {
+      "id": "demo-bota-noche-escamada",
+      "name": "Bota Noche Escamada",
+      "typeId": "botas",
+      "active": true,
+      "brand": "Tombstone",
+      "sku": "MUESTRA-BOT-102",
+      "price": 4890,
+      "colorId": "negro-textura",
+      "colorName": "Negro texturizado",
+      "colorHex": "#24201f",
+      "material": "Piel con acabado texturizado",
+      "skinName": "Acabado tipo reptil",
+      "last": "Oval",
+      "sizes": [
+        "25",
+        "26",
+        "27",
+        "28",
+        "29"
+      ],
+      "imageKey": "bota_02.png",
+      "imageAlt": "Bota western negra con textura en relieve",
+      "description": "Diseño de muestra en negro profundo, con textura marcada y bordado ornamental.",
+      "variants": [
+        {
+          "name": "Negro texturizado",
+          "color": "Negro texturizado"
+        }
+      ]
+    },
+    {
+      "id": "demo-bota-perla",
+      "name": "Bota Perla del Norte",
+      "typeId": "botas",
+      "active": true,
+      "brand": "Correcaminos",
+      "sku": "MUESTRA-BOT-103",
+      "price": 4590,
+      "colorId": "perla-cafe",
+      "colorName": "Perla y café",
+      "colorHex": "#d8c4a3",
+      "material": "Piel con acabado texturizado",
+      "skinName": "Textura granulada",
+      "last": "Dubái",
+      "sizes": [
+        "25",
+        "26",
+        "27",
+        "28",
+        "29"
+      ],
+      "imageKey": "bota_03.png",
+      "imageAlt": "Bota western bicolor con tubo claro y cuerpo café",
+      "description": "Bota de muestra bicolor con tubo claro, cuerpo café y textura decorativa en la piel.",
+      "variants": [
+        {
+          "name": "Perla y café",
+          "color": "Perla y café"
+        }
+      ]
+    },
+    {
+      "id": "demo-bota-carbon",
+      "name": "Bota Carbón Bordada",
+      "typeId": "botas",
+      "active": true,
+      "brand": "Ariat",
+      "sku": "MUESTRA-BOT-104",
+      "price": 4150,
+      "colorId": "carbon",
+      "colorName": "Carbón",
+      "colorHex": "#302a27",
+      "material": "Piel de res",
+      "skinName": "Res",
+      "last": "Bulldog",
+      "sizes": [
+        "25",
+        "26",
+        "27",
+        "28",
+        "29",
+        "30"
+      ],
+      "imageKey": "bota_04.png",
+      "imageAlt": "Bota western oscura con bordado tono sobre tono",
+      "description": "Modelo de muestra en tono carbón con costuras decorativas discretas y acabado sobrio.",
+      "variants": [
+        {
+          "name": "Carbón",
+          "color": "Carbón"
+        }
+      ]
+    },
+    {
+      "id": "demo-bota-piton",
+      "name": "Bota Pitón Arena",
+      "typeId": "botas",
+      "active": true,
+      "brand": "Malcreado",
+      "sku": "MUESTRA-BOT-105",
+      "price": 5290,
+      "colorId": "arena-piton",
+      "colorName": "Arena estampado",
+      "colorHex": "#b89a71",
+      "material": "Piel con acabado estampado",
+      "skinName": "Patrón tipo pitón",
+      "last": "Oval",
+      "sizes": [
+        "25",
+        "26",
+        "27",
+        "28",
+        "29"
+      ],
+      "imageKey": "bota_05.png",
+      "imageAlt": "Bota western con estampado claro tipo pitón",
+      "description": "Diseño de muestra con patrón gráfico tipo pitón en tonos arena y café.",
+      "variants": [
+        {
+          "name": "Arena estampado",
+          "color": "Arena estampado"
+        }
+      ]
+    },
+    {
+      "id": "demo-bota-herencia",
+      "name": "Bota Herencia Bordada",
+      "typeId": "botas",
+      "active": true,
+      "brand": "Tombstone",
+      "sku": "MUESTRA-BOT-106",
+      "price": 4450,
+      "colorId": "tabaco",
+      "colorName": "Tabaco",
+      "colorHex": "#704322",
+      "material": "Piel de res",
+      "skinName": "Res",
+      "last": "Bulldog",
+      "sizes": [
+        "25",
+        "26",
+        "27",
+        "28",
+        "29",
+        "30"
+      ],
+      "imageKey": "Embroidered Leather Cowboy Boot-9.png",
+      "imageAlt": "Bota bordada de piel café en una composición western",
+      "description": "Bota de muestra en piel café con bordado de inspiración clásica y acabado envejecido.",
+      "variants": [
+        {
+          "name": "Tabaco",
+          "color": "Tabaco"
+        }
+      ]
+    },
+    {
+      "id": "demo-bota-arriera",
+      "name": "Bota Arriera Clásica",
+      "typeId": "botas",
+      "active": true,
+      "brand": "Correcaminos",
+      "sku": "MUESTRA-BOT-107",
+      "price": 3990,
+      "colorId": "chocolate-rustico",
+      "colorName": "Chocolate rústico",
+      "colorHex": "#5d3825",
+      "material": "Piel de res",
+      "skinName": "Res",
+      "last": "Dubái",
+      "sizes": [
+        "25",
+        "26",
+        "27",
+        "28",
+        "29"
+      ],
+      "imageKey": "Rustic Embroidered Cowboy Boot Display-3.png",
+      "imageAlt": "Bota western café con bordado y detalles de inspiración rústica",
+      "description": "Silueta vaquera de muestra con contraste de tonos y costuras ornamentales.",
+      "variants": [
+        {
+          "name": "Chocolate rústico",
+          "color": "Chocolate rústico"
+        }
+      ]
+    },
+    {
+      "id": "demo-bota-suroeste",
+      "name": "Bota Suroeste Labrada",
+      "typeId": "botas",
+      "active": true,
+      "brand": "Ariat",
+      "sku": "MUESTRA-BOT-108",
+      "price": 4690,
+      "colorId": "miel-tabaco",
+      "colorName": "Miel y tabaco",
+      "colorHex": "#9a653b",
+      "material": "Piel de res",
+      "skinName": "Res",
+      "last": "Oval",
+      "sizes": [
+        "25",
+        "26",
+        "27",
+        "28",
+        "29",
+        "30"
+      ],
+      "imageKey": "Rustic Southwestern Cowboy Boot Display-7.png",
+      "imageAlt": "Bota western bicolor de inspiración suroeste",
+      "description": "Propuesta de muestra bicolor con bordado de alto contraste y acabado artesanal.",
+      "variants": [
+        {
+          "name": "Miel y tabaco",
+          "color": "Miel y tabaco"
+        }
+      ]
+    },
+    {
+      "id": "demo-bota-pionera",
+      "name": "Bota Pionera de Campo",
+      "typeId": "botas",
+      "active": true,
+      "brand": "Malcreado",
+      "sku": "MUESTRA-BOT-109",
+      "price": 4190,
+      "colorId": "cafe-campo",
+      "colorName": "Café campo",
+      "colorHex": "#74462d",
+      "material": "Piel de res",
+      "skinName": "Res",
+      "last": "Bulldog",
+      "sizes": [
+        "25",
+        "26",
+        "27",
+        "28",
+        "29"
+      ],
+      "imageKey": "Rustic Western Cowboy Boot Display-2.png",
+      "imageAlt": "Bota western de caña alta en tono café",
+      "description": "Bota de muestra de caña alta con líneas bordadas y acabado café de carácter ranchero.",
+      "variants": [
+        {
+          "name": "Café campo",
+          "color": "Café campo"
+        }
+      ]
+    },
+    {
+      "id": "demo-bota-sendero",
+      "name": "Bota Sendero Clásica",
+      "typeId": "botas",
+      "active": true,
+      "brand": "Tombstone",
+      "sku": "MUESTRA-BOT-110",
+      "price": 4390,
+      "colorId": "cuero-natural",
+      "colorName": "Cuero natural",
+      "colorHex": "#815332",
+      "material": "Piel de res",
+      "skinName": "Res",
+      "last": "Dubái",
+      "sizes": [
+        "25",
+        "26",
+        "27",
+        "28",
+        "29",
+        "30"
+      ],
+      "imageKey": "Rustic Western Cowboy Boot Display-4.png",
+      "imageAlt": "Bota western café con bordado y accesorios de rancho",
+      "description": "Diseño de muestra en cuero natural, con bordado ornamental y tacón robusto.",
+      "variants": [
+        {
+          "name": "Cuero natural",
+          "color": "Cuero natural"
+        }
+      ]
+    },
+    {
+      "id": "demo-botin-elastico",
+      "name": "Botín Elástico Cognac",
+      "typeId": "botines",
+      "active": true,
+      "brand": "Ariat",
+      "sku": "MUESTRA-BTN-101",
+      "price": 2890,
+      "colorId": "cognac",
+      "colorName": "Cognac",
+      "colorHex": "#8b4e2d",
+      "material": "Piel de res",
+      "skinName": "Res",
+      "last": "Oval",
+      "sizes": [
+        "25",
+        "26",
+        "27",
+        "28",
+        "29"
+      ],
+      "imageKey": "botin_01.png",
+      "imageAlt": "Botín café con panel elástico lateral",
+      "description": "Botín de muestra con panel lateral elástico, punta western y acabado café.",
+      "variants": [
+        {
+          "name": "Cognac",
+          "color": "Cognac"
+        }
+      ]
+    },
+    {
+      "id": "demo-botin-hebilla",
+      "name": "Botín Hebilla del Oeste",
+      "typeId": "botines",
+      "active": true,
+      "brand": "Malcreado",
+      "sku": "MUESTRA-BTN-102",
+      "price": 3150,
+      "colorId": "negro",
+      "colorName": "Negro",
+      "colorHex": "#262321",
+      "material": "Piel de res",
+      "skinName": "Res",
+      "last": "Bulldog",
+      "sizes": [
+        "25",
+        "26",
+        "27",
+        "28",
+        "29",
+        "30"
+      ],
+      "imageKey": "botin_02.png",
+      "imageAlt": "Botín negro con correas y hebilla metálica",
+      "description": "Botín de muestra en negro con correas decorativas y herrajes en tono latón.",
+      "variants": [
+        {
+          "name": "Negro",
+          "color": "Negro"
+        }
+      ]
+    },
+    {
+      "id": "demo-botin-campero",
+      "name": "Botín Campero Arena",
+      "typeId": "botines",
+      "active": true,
+      "brand": "Correcaminos",
+      "sku": "MUESTRA-BTN-103",
+      "price": 2690,
+      "colorId": "arena",
+      "colorName": "Arena",
+      "colorHex": "#a8794f",
+      "material": "Piel de res",
+      "skinName": "Res",
+      "last": "Oval",
+      "sizes": [
+        "25",
+        "26",
+        "27",
+        "28",
+        "29"
+      ],
+      "imageKey": "botin_03.png",
+      "imageAlt": "Botín color arena con cierre lateral",
+      "description": "Perfil limpio de muestra en color arena, con cierre lateral y tacón bajo.",
+      "variants": [
+        {
+          "name": "Arena",
+          "color": "Arena"
+        }
+      ]
+    },
+    {
+      "id": "demo-botin-grabado",
+      "name": "Botín Grabado Chocolate",
+      "typeId": "botines",
+      "active": true,
+      "brand": "Tombstone",
+      "sku": "MUESTRA-BTN-104",
+      "price": 3390,
+      "colorId": "chocolate",
+      "colorName": "Chocolate",
+      "colorHex": "#563a2a",
+      "material": "Piel con acabado texturizado",
+      "skinName": "Acabado tipo reptil",
+      "last": "Dubái",
+      "sizes": [
+        "25",
+        "26",
+        "27",
+        "28",
+        "29"
+      ],
+      "imageKey": "botin_04.png",
+      "imageAlt": "Botín café con textura geométrica en relieve",
+      "description": "Botín de muestra con textura geométrica, panel elástico y tono chocolate.",
+      "variants": [
+        {
+          "name": "Chocolate",
+          "color": "Chocolate"
+        }
+      ]
+    },
+    {
+      "id": "demo-botin-nocturno",
+      "name": "Botín Nocturno Bordado",
+      "typeId": "botines",
+      "active": true,
+      "brand": "Almeida",
+      "sku": "MUESTRA-BTN-105",
+      "price": 2990,
+      "colorId": "negro-mate",
+      "colorName": "Negro mate",
+      "colorHex": "#211e1c",
+      "material": "Piel de res",
+      "skinName": "Res",
+      "last": "Oval",
+      "sizes": [
+        "25",
+        "26",
+        "27",
+        "28",
+        "29",
+        "30"
+      ],
+      "imageKey": "botin_05.png",
+      "imageAlt": "Botín negro con costura decorativa occidental",
+      "description": "Botín negro de muestra con costuras tonales y silueta western contemporánea.",
+      "variants": [
+        {
+          "name": "Negro mate",
+          "color": "Negro mate"
+        }
+      ]
+    },
+    {
+      "id": "demo-cinturon-labrado",
+      "name": "Cinturón Labrado del Rancho",
+      "typeId": "cinturones",
+      "active": true,
+      "brand": "Almeida",
+      "sku": "MUESTRA-CIN-101",
+      "price": 1390,
+      "colorId": "cafe-labrado",
+      "colorName": "Café labrado",
+      "colorHex": "#59351f",
+      "material": "Piel de res",
+      "skinName": "Res",
+      "sizes": [
+        "30",
+        "32",
+        "34",
+        "36",
+        "38",
+        "40",
+        "42"
+      ],
+      "imageKey": "cinturon_01.png",
+      "imageAlt": "Cinturón café labrado con hebilla plateada",
+      "description": "Cinturón de muestra con grabado ornamental y hebilla metálica de presencia clásica.",
+      "variants": [
+        {
+          "name": "Café labrado",
+          "color": "Café labrado"
+        }
+      ]
+    },
+    {
+      "id": "demo-cinturon-geometrico",
+      "name": "Cinturón Geométrico Vaquero",
+      "typeId": "cinturones",
+      "active": true,
+      "brand": "Correcaminos",
+      "sku": "MUESTRA-CIN-102",
+      "price": 1290,
+      "colorId": "cafe-miel",
+      "colorName": "Café y miel",
+      "colorHex": "#80502f",
+      "material": "Piel de res con bordado decorativo",
+      "skinName": "Res",
+      "sizes": [
+        "30",
+        "32",
+        "34",
+        "36",
+        "38",
+        "40"
+      ],
+      "imageKey": "cinturon_02.png",
+      "imageAlt": "Cinturón café con motivos geométricos bordados",
+      "description": "Diseño de muestra con motivos geométricos en contraste y hebilla plateada grabada.",
+      "variants": [
+        {
+          "name": "Café y miel",
+          "color": "Café y miel"
+        }
+      ]
+    },
+    {
+      "id": "demo-cinturon-estrella",
+      "name": "Cinturón Estrella del Camino",
+      "typeId": "cinturones",
+      "active": true,
+      "brand": "Malcreado",
+      "sku": "MUESTRA-CIN-103",
+      "price": 1590,
+      "colorId": "negro-conchos",
+      "colorName": "Negro con detalles metálicos",
+      "colorHex": "#252321",
+      "material": "Piel de res",
+      "skinName": "Res",
+      "sizes": [
+        "30",
+        "32",
+        "34",
+        "36",
+        "38",
+        "40",
+        "42"
+      ],
+      "imageKey": "cinturon_03.png",
+      "imageAlt": "Cinturón negro con apliques metálicos y estrella",
+      "description": "Cinturón de muestra negro con apliques decorativos y hebilla de inspiración western.",
+      "variants": [
+        {
+          "name": "Negro con detalles metálicos",
+          "color": "Negro con detalles metálicos"
+        }
+      ]
+    },
+    {
+      "id": "demo-sombrero-marfil",
+      "name": "Sombrero Marfil del Valle",
+      "typeId": "sombreros",
+      "active": true,
+      "brand": "Morcón",
+      "sku": "MUESTRA-SOM-101",
+      "price": 1890,
+      "colorId": "marfil",
+      "colorName": "Marfil",
+      "colorHex": "#e1d0b1",
+      "material": "Paja natural",
+      "quality": "10X",
+      "style": "Ala amplia",
+      "sizes": [
+        "55",
+        "56",
+        "57",
+        "58",
+        "59",
+        "60"
+      ],
+      "imageKey": "sombrero_01.png",
+      "imageAlt": "Sombrero vaquero color marfil con banda decorativa",
+      "description": "Sombrero de muestra en tono marfil, con ala amplia y banda de inspiración western.",
+      "variants": [
+        {
+          "name": "Marfil",
+          "color": "Marfil"
+        }
+      ]
+    },
+    {
+      "id": "demo-texana-cacao",
+      "name": "Texana Cacao de la Sierra",
+      "typeId": "texanas",
+      "active": true,
+      "brand": "Indomables",
+      "sku": "MUESTRA-TEX-101",
+      "price": 2290,
+      "colorId": "cacao",
+      "colorName": "Cacao",
+      "colorHex": "#3e2b22",
+      "material": "Lana",
+      "quality": "10X",
+      "style": "Copa cattleman",
+      "sizes": [
+        "55",
+        "56",
+        "57",
+        "58",
+        "59",
+        "60"
+      ],
+      "imageKey": "texana_01.png",
+      "imageAlt": "Texana color cacao con banda decorativa sobre mesa rústica",
+      "description": "Texana de muestra en tono cacao, con copa marcada y banda decorativa de carácter clásico.",
+      "variants": [
+        {
+          "name": "Cacao",
+          "color": "Cacao"
+        }
+      ]
+    }
+  ]
+}
