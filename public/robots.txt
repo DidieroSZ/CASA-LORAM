@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://didierosz.github.io/CASA-LORAM/sitemap.xml

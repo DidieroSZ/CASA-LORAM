@@ -1,0 +1,69 @@
+{
+  "categories": [
+    { "id": "traditional", "name": "Pieles tradicionales", "description": "Materiales comunes y tradicionales", "skinIds": ["res", "venado", "cuello-de-toro", "pelo-de-vaca"], "order": 1, "active": true },
+    { "id": "exotic", "name": "Pieles exóticas", "description": "Materiales de apariencia distintiva", "skinIds": ["piton", "cocodrilo-panza", "cocodrilo-cola", "avestruz", "pescado", "jirafa"], "order": 2, "active": true }
+  ],
+  "skins": [
+    {
+      "id": "res", "name": "Res", "categoryId": "traditional", "active": true, "imageIds": [],
+      "description": "Piel tradicional utilizada en diferentes artículos western. Su apariencia y textura pueden variar según el tratamiento y acabado aplicado.",
+      "characteristics": ["Apariencia y textura variables según su tratamiento y acabado."],
+      "care": { "cleaning": ["Retira el polvo con un paño suave o cepillo adecuado.", "Limpia las manchas superficiales sin frotar agresivamente."], "maintenance": ["Usa productos compatibles con el acabado.", "Aplica acondicionador solo cuando sea apropiado y siguiendo las indicaciones del fabricante."], "precautions": ["Evita la exposición prolongada al sol, la humedad y las fuentes de calor."] }
+    },
+    {
+      "id": "venado", "name": "Venado", "categoryId": "traditional", "active": true, "imageIds": [],
+      "description": "Material de apariencia natural y tacto característico. Su presentación puede variar según el tratamiento y acabado de la piel.",
+      "characteristics": ["Apariencia natural y tacto característico.", "Su presentación depende del tratamiento y acabado."],
+      "care": { "cleaning": ["Retira el polvo con un paño limpio y suave.", "Evita saturar el material con agua."], "maintenance": ["Evita el uso excesivo de aceites o acondicionadores."], "precautions": ["No uses productos abrasivos ni limpiadores convencionales sin verificar su compatibilidad."], "professionalCare": ["Ante manchas profundas, acude a un especialista en pieles."] }
+    },
+    {
+      "id": "cuello-de-toro", "name": "Cuello de toro", "categoryId": "traditional", "active": true, "imageIds": [],
+      "description": "Una variante de piel bovina identificada por su zona de procedencia. Su aspecto depende del proceso de curtido y acabado utilizado.",
+      "characteristics": ["Variante de piel bovina identificada por su zona de procedencia.", "El aspecto depende del curtido y acabado."],
+      "care": { "cleaning": ["Limpia regularmente con un paño suave."], "maintenance": ["Utiliza productos específicos para el acabado correspondiente.", "No apliques aceites o grasas sin confirmar su compatibilidad."], "precautions": ["Evita el exceso de humedad y las fuentes de calor."] }
+    },
+    {
+      "id": "pelo-de-vaca", "name": "Pelo de vaca", "categoryId": "traditional", "active": true, "imageIds": [],
+      "description": "Material que conserva el pelo natural de la piel, proporcionando una apariencia y textura distintivas.",
+      "characteristics": ["Conserva el pelo natural de la piel.", "La superficie tiene una apariencia y textura distintivas."],
+      "care": { "cleaning": ["Retira el polvo con un cepillo suave.", "Cepilla siguiendo la dirección natural del pelo."], "maintenance": ["Evita frotar agresivamente.", "No apliques cremas o acondicionadores para piel lisa sobre la superficie con pelo."], "precautions": ["No empapes ni sumerjas el material."], "professionalCare": ["Para manchas difíciles, acude a un servicio especializado."] }
+    },
+    {
+      "id": "piton", "name": "Pitón", "categoryId": "exotic", "active": true, "imageIds": [],
+      "description": "Piel exótica reconocible por su patrón de escamas y su apariencia distintiva. Cada pieza presenta características naturales propias.",
+      "characteristics": ["Patrón de escamas distintivo.", "Cada pieza presenta características naturales propias."],
+      "care": { "cleaning": ["Retira el polvo con un paño suave y seco.", "Realiza movimientos siguiendo la dirección natural de las escamas."], "maintenance": ["Evita agua, aceites y productos convencionales no diseñados para esta piel."], "precautions": ["No limpies en sentido contrario a las escamas.", "Mantén lejos del calor y de la exposición solar prolongada."] }
+    },
+    {
+      "id": "cocodrilo-panza", "name": "Cocodrilo (panza)", "categoryId": "exotic", "active": true, "imageIds": [],
+      "description": "Presentación de piel de cocodrilo correspondiente a la zona del vientre. Destaca por la disposición característica de sus escamas.",
+      "characteristics": ["Corresponde a la zona del vientre.", "Presenta una disposición característica de escamas."],
+      "care": { "cleaning": ["Limpia suavemente con microfibra seca."], "maintenance": ["Utiliza únicamente tratamientos específicos recomendados para su acabado.", "No apliques acondicionadores de piel bovina."], "precautions": ["Evita productos domésticos, limpiadores convencionales, humedad excesiva y calor directo."] }
+    },
+    {
+      "id": "cocodrilo-cola", "name": "Cocodrilo (cola)", "categoryId": "exotic", "active": true, "imageIds": [],
+      "description": "Presentación de piel de cocodrilo correspondiente a la zona de la cola, con un patrón de escamas diferente al de la zona ventral.",
+      "characteristics": ["Corresponde a la zona de la cola.", "Su patrón de escamas es distinto al de la zona ventral."],
+      "care": { "cleaning": ["Retira el polvo con un paño suave y seco."], "maintenance": ["Consulta a un especialista antes de aplicar acondicionadores."], "storage": ["Mantén el producto en un lugar seco y ventilado."], "precautions": ["Evita doblar o someter la superficie a presión innecesaria.", "Evita productos químicos, limpiadores domésticos y aceites convencionales."] }
+    },
+    {
+      "id": "avestruz", "name": "Avestruz", "categoryId": "exotic", "active": true, "imageIds": [],
+      "description": "Piel exótica reconocida por las marcas características de sus folículos, que le proporcionan una textura visual particular.",
+      "characteristics": ["Marcas de folículos características.", "Textura visual particular."],
+      "care": { "cleaning": ["Limpia delicadamente con un paño suave.", "Usa un cepillo de cerdas suaves para retirar residuos superficiales."], "maintenance": ["Evita ceras pesadas y productos derivados del petróleo.", "No apliques acondicionadores en exceso: pueden modificar el aspecto y oscurecer la superficie."], "precautions": ["Evita frotar o ejercer presión sobre los folículos."] }
+    },
+    {
+      "id": "pescado", "name": "Pescado", "categoryId": "exotic", "active": true, "imageIds": [],
+      "description": "Piel exótica que conserva una textura y patrón característicos de la estructura natural de las escamas.",
+      "characteristics": ["Textura y patrón característicos de las escamas."],
+      "care": { "cleaning": ["Retira el polvo con un paño suave y seco.", "No frotes agresivamente la superficie."], "maintenance": ["Si se moja, permite que se seque naturalmente, lejos de fuentes de calor."], "precautions": ["Evita la humedad excesiva.", "No utilices secadoras ni expongas el material directamente al sol."], "professionalCare": ["Consulta con un especialista ante daños o manchas difíciles."] }
+    },
+    {
+      "id": "jirafa", "name": "Jirafa", "categoryId": "exotic", "active": true, "imageIds": [],
+      "description": "Piel exótica con una apariencia visual particular que la distingue de los materiales tradicionales.",
+      "characteristics": ["Apariencia visual particular, distinta de los materiales tradicionales."],
+      "care": { "cleaning": ["Retira el polvo con un paño suave y seco."], "maintenance": ["Consulta al fabricante o especialista para tratamientos de limpieza y conservación."], "precautions": ["Evita humedad excesiva, calor y exposición solar prolongada.", "No apliques productos para otras pieles exóticas sin verificar su compatibilidad.", "Evita productos químicos y limpiadores domésticos."], "professionalCare": ["Estas recomendaciones son provisionales hasta contar con indicaciones específicas del proveedor."] }
+    }
+  ],
+  "images": []
+}
