@@ -9,7 +9,8 @@ import './styles/contact.css';
 import heroImage from './assets/casa-loram-hero.png';
 import brandLogo from './assets/Casa Loram Beige Longhorn Logo.png';
 import { createElement } from 'lucide';
-import { ArrowDownRight, Clock3, MapPin, PackageOpen } from 'lucide';
+import { ArrowDownRight, Clock3, MapPin, PackageOpen, MessageCircle } from 'lucide';
+import { getWhatsAppUrl, contactConfig } from './js/contact-config.js';
 import { initStoreStatus } from './js/store-hours.js';
 import { initInteractions } from './js/interactions.js';
 import { initAnimations } from './js/animations.js';
@@ -31,10 +32,17 @@ document.querySelector('#app').innerHTML = `
     <a class="wordmark" href="#inicio" aria-label="Casa Loram, inicio">
       <img class="wordmark__logo" src="${brandLogo}" alt="Casa Loram — Tradición en cada paso" />
     </a>
+    <nav class="primary-navigation" id="primary-navigation" aria-label="Navegación principal">
+      <a href="#inicio" data-nav-link>Inicio</a>
+      <a href="#catalogo" data-nav-link>Catálogo</a>
+      <a href="#coleccion" data-nav-link>Pieles</a>
+      <a href="#contacto" data-nav-link>Contacto</a>
+      <a class="navigation-cta" href="${getWhatsAppUrl(contactConfig.whatsappMessage)}" target="_blank" rel="noopener noreferrer">Contactar ${icon(MessageCircle, 'navigation-cta__icon')}</a>
+    </nav>
     <div class="header-hours" aria-label="Horarios de atención">
       ${icon(Clock3, 'header-hours__icon')}
       <div class="header-hours__content">
-        <span class="header-hours__title">Horarios de atención</span>
+        <span class="header-hours__title">Horario</span>
         <div class="header-hours__schedule" data-header-hours aria-live="polite"></div>
       </div>
       <span class="header-hours__status is-closed" data-store-status role="status" aria-live="polite">
@@ -44,12 +52,6 @@ document.querySelector('#app').innerHTML = `
     <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Abrir menú">
       <span></span><span></span>
     </button>
-    <nav class="primary-navigation" id="primary-navigation" aria-label="Navegación principal">
-      <a href="#catalogo">Colección</a>
-      <a href="#coleccion">Pieles</a>
-      <a href="#horarios">Horarios</a>
-      <a href="#contacto">Contacto</a>
-    </nav>
   </header>
   <!-- Section header FIN -->
 

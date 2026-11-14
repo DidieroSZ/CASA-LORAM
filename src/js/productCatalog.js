@@ -221,10 +221,10 @@ const renderProductCard = (product) => {
   const type = PRODUCT_TYPES.find((entry) => entry.id === product.typeId);
   const image = getProductImages(product)[0];
   return `<article class="catalog-product-card">
-    <button class="catalog-product-card__open" type="button" data-open-product="${escapeHtml(product.id)}" data-blendy-from="${escapeHtml(product.id)}" aria-label="Ver detalles de ${escapeHtml(product.name)}"><span class="catalog-product-card__content">
-      ${image
+    <button class="catalog-product-card__open" type="button" data-open-product="${escapeHtml(product.id)}" aria-label="Ver detalles de ${escapeHtml(product.name)}"><span class="catalog-product-card__content">
+      <span class="catalog-product-card__media">${image
         ? `<img class="catalog-product-card__image" src="${escapeHtml(image.src)}" alt="${escapeHtml(image.alt ?? '')}" loading="lazy" />`
-        : '<span class="catalog-product-card__image catalog-product-card__image--empty" aria-hidden="true"></span>'}
+        : '<span class="catalog-product-card__image catalog-product-card__image--empty" aria-hidden="true"></span>'}</span>
     <span class="catalog-product-card__details">
       ${type ? `<p>${type.name}</p>` : ''}
       <h4>${escapeHtml(product.name)}</h4>
@@ -264,7 +264,7 @@ const renderProductDetail = (product) => {
   const whatsappUrl = getWhatsAppUrl(message);
   return `<div class="product-detail">
     <div class="product-detail__gallery">
-      ${images.length ? `<img class="product-detail__image" src="${escapeHtml(images[0].src)}" alt="${escapeHtml(images[0].alt ?? product.name)}">${images.length > 1 ? `<div class="product-detail__thumbnails">${images.map((image, index) => `<button type="button" data-detail-image="${index}" aria-label="Ver fotografía ${index + 1}" aria-pressed="${index === 0}"><img src="${escapeHtml(image.src)}" alt=""></button>`).join('')}</div>` : ''}` : '<div class="product-detail__image product-detail__image--empty" aria-label="Fotografía no disponible"></div>'}
+      ${images.length ? `<div class="product-detail__media"><img class="product-detail__image" src="${escapeHtml(images[0].src)}" alt="${escapeHtml(images[0].alt ?? product.name)}"></div>${images.length > 1 ? `<div class="product-detail__thumbnails">${images.map((image, index) => `<button type="button" data-detail-image="${index}" aria-label="Ver fotografía ${index + 1}" aria-pressed="${index === 0}"><img src="${escapeHtml(image.src)}" alt=""></button>`).join('')}</div>` : ''}` : '<div class="product-detail__media product-detail__image--empty" aria-label="Fotografía no disponible"></div>'}
     </div>
     <div class="product-detail__content">
       <p class="product-detail__sample">Ejemplo de catálogo · datos de muestra</p>
@@ -315,7 +315,10 @@ export const initProductCatalog = () => {
   const detailSurface = detailDialog?.querySelector('[data-product-surface]');
   let activeProduct = null;
   let activeTrigger = null;
-  let isClosing = false;
+  let activeBlendId = null;
+  let transitionState = 'closed';
+  let closeRequested = false;
+  let transitionSource = null;
   let blendy = null;
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   if (!filtersMount || !resultsMount || !resultCount || !clearButton) return;
@@ -328,36 +331,110 @@ export const initProductCatalog = () => {
 
   renderFilters(filtersMount, state, bounds);
 
-  resultsMount.addEventListener('click', (event) => {
-    const trigger = event.target.closest('[data-open-product]');
-    if (!trigger || !detailDialog || !detailMount) return;
-    const product = products.find((entry) => String(entry.id) === trigger.dataset.openProduct);
-    if (!product) return;
+  const focusCloseButton = () => detailDialog.querySelector('[data-close-product]')?.focus();
+  const removeTransitionSource = () => {
+    if (!transitionSource) return;
+    transitionSource.removeAttribute('data-blendy-from');
+    transitionSource.remove();
+    transitionSource = null;
+  };
+
+  const finishOpen = () => {
+    transitionState = 'open';
+    detailDialog.classList.remove('is-opening');
+    detailDialog.classList.add('is-open');
+    if (closeRequested) closeDetail();
+  };
+
+  const openDetail = (trigger, product) => {
+    if (transitionState !== 'closed') return;
+    transitionState = 'opening';
+    closeRequested = false;
     activeProduct = product;
     activeTrigger = trigger;
-    isClosing = false;
+    activeBlendId = `product-${String(product.id)}`;
     detailMount.innerHTML = renderProductDetail(product);
-    detailDialog.dataset.blendyTo = String(product.id);
+    const targetMedia = detailMount.querySelector('.product-detail__media');
+    const sourceMedia = trigger.querySelector('.catalog-product-card__media');
+    detailDialog.classList.remove('is-open', 'is-closing');
+    detailDialog.classList.add('is-opening');
+    targetMedia?.setAttribute('data-blendy-to', activeBlendId);
+
+    if (targetMedia?.firstElementChild && sourceMedia?.firstElementChild && !reducedMotion.matches && blendy) {
+      const bounds = sourceMedia.getBoundingClientRect();
+      transitionSource = sourceMedia.cloneNode(true);
+      transitionSource.setAttribute('data-blendy-from', activeBlendId);
+      transitionSource.setAttribute('aria-hidden', 'true');
+      transitionSource.querySelector('img')?.setAttribute('alt', '');
+      Object.assign(transitionSource.style, {
+        position: 'fixed',
+        inset: 'auto',
+        top: `${bounds.top}px`,
+        left: `${bounds.left}px`,
+        width: `${bounds.width}px`,
+        height: `${bounds.height}px`,
+        margin: '0',
+        zIndex: '1000',
+        pointerEvents: 'none',
+      });
+      detailSurface.append(transitionSource);
+    }
+
     detailDialog.showModal();
-    blendy?.update();
-    if (!reducedMotion.matches) blendy?.toggle(String(product.id));
-    detailDialog.querySelector('[data-close-product]')?.focus();
+    focusCloseButton();
+
+    if (transitionSource) {
+      const image = targetMedia.querySelector('img');
+      const animate = () => {
+        if (transitionState !== 'opening') return;
+        blendy.update();
+        blendy.toggle(activeBlendId, finishOpen);
+      };
+      const skipTransition = () => {
+        removeTransitionSource();
+        targetMedia?.removeAttribute('data-blendy-to');
+        finishOpen();
+      };
+      if (image?.complete && image.naturalWidth > 0) animate();
+      else if (image?.decode) image.decode().then(animate, skipTransition);
+      else skipTransition();
+    } else {
+      finishOpen();
+    }
+  };
+
+  resultsMount.addEventListener('click', (event) => {
+    const trigger = event.target.closest('[data-open-product]');
+    if (!trigger || !detailDialog || !detailMount || transitionState !== 'closed') return;
+    const product = products.find((entry) => String(entry.id) === trigger.dataset.openProduct);
+    if (!product) return;
+    openDetail(trigger, product);
   });
   const closeDetail = () => {
-    if (!detailDialog?.open || isClosing) return;
-    isClosing = true;
-    const productId = String(activeProduct?.id ?? '');
+    if (!detailDialog?.open || transitionState === 'closed' || transitionState === 'closing') return;
+    if (transitionState === 'opening') {
+      closeRequested = true;
+      return;
+    }
+    transitionState = 'closing';
+    detailDialog.classList.remove('is-open');
+    detailDialog.classList.add('is-closing');
     const finishClose = () => {
       detailDialog.close();
-      isClosing = false;
-      activeTrigger?.focus();
+      detailDialog.classList.remove('is-opening', 'is-open', 'is-closing');
+      transitionState = 'closed';
+      removeTransitionSource();
+      if (activeTrigger?.isConnected) activeTrigger.focus();
       activeTrigger = null;
+      activeProduct = null;
+      activeBlendId = null;
     };
-    if (reducedMotion.matches || !blendy || !productId) finishClose();
-    else blendy.untoggle(productId, finishClose);
+    if (reducedMotion.matches || !blendy || !activeBlendId || !transitionSource) finishClose();
+    else blendy.untoggle(activeBlendId, finishClose);
   };
   detailDialog?.addEventListener('click', (event) => {
     if (event.target === detailDialog || event.target.closest('[data-close-product]')) closeDetail();
+    if (transitionState !== 'open') return;
     const thumb = event.target.closest('[data-detail-image]');
     if (!thumb || !detailMount) return;
     const product = activeProduct;
@@ -371,6 +448,16 @@ export const initProductCatalog = () => {
   detailDialog?.addEventListener('cancel', (event) => {
     event.preventDefault();
     closeDetail();
+  });
+  detailDialog?.addEventListener('close', () => {
+    if (transitionState !== 'closed') {
+      transitionState = 'closed';
+      detailDialog.classList.remove('is-opening', 'is-open', 'is-closing');
+      removeTransitionSource();
+      activeProduct = null;
+      activeTrigger = null;
+      activeBlendId = null;
+    }
   });
   detailMount?.addEventListener('change', (event) => {
     const input = event.target.closest('[name="product-variant"]');

@@ -13,7 +13,7 @@
 .cinematic-intro::before {
   position: absolute;
   inset: clamp(1rem, 3vw, 2.5rem);
-  border: 1px solid rgb(247 239 227 / 20%);
+  border: 1px solid color-mix(in srgb, var(--color-brand-ivory) 20%, transparent);
   content: '';
   pointer-events: none;
 }
@@ -28,7 +28,7 @@
 .cinematic-intro__logo {
   width: 100%;
   height: auto;
-  filter: drop-shadow(0 1.5rem 2rem rgb(0 0 0 / 20%));
+  filter: drop-shadow(0 1.5rem 2rem color-mix(in srgb, var(--color-brand-deep) 20%, transparent));
 }
 
 .cinematic-intro__rule {

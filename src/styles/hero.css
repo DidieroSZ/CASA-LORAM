@@ -4,7 +4,7 @@
   grid-template-columns: minmax(0, 1.02fr) minmax(24rem, .98fr);
   align-items: center;
   min-height: min(850px, 100svh);
-  padding: 8.5rem var(--content-inline-edge) 4.25rem;
+  padding: 4.25rem var(--content-inline-edge);
   overflow: hidden;
   isolation: isolate;
   background: var(--color-brand-deep);
@@ -21,7 +21,7 @@
   position: absolute;
   inset: 0;
   content: '';
-  background: linear-gradient(90deg, #211710 0%, rgb(33 23 16 / 80%) 13%, rgb(33 23 16 / 15%) 56%, rgb(33 23 16 / 5%) 100%), linear-gradient(0deg, rgb(20 14 10 / 46%), transparent 38%);
+  background: linear-gradient(90deg, var(--color-brand-deep) 0%, color-mix(in srgb, var(--color-brand-deep) 80%, transparent) 13%, color-mix(in srgb, var(--color-brand-deep) 15%, transparent) 56%, color-mix(in srgb, var(--color-brand-deep) 5%, transparent) 100%), linear-gradient(0deg, color-mix(in srgb, var(--color-brand-deep) 46%, transparent), transparent 38%);
 }
 
 .hero__image img {
@@ -102,7 +102,7 @@
 
 .button--primary {
   padding: 0 1.3rem;
-  color: #201710;
+  color: var(--color-brand-deep);
   background: var(--color-brand-ivory);
 }
 
@@ -192,15 +192,15 @@
   width: .43rem;
   height: .43rem;
   border-radius: 50%;
-  background: #9b7770;
+  background: var(--color-brand-leather);
 }
 
 .store-status.is-open i {
-  background: #89a17d;
+  background: var(--color-brand-status-open);
 }
 
 .store-status.is-closed i {
-  background: #a88173;
+  background: var(--color-brand-sand);
 }
 
 .hours__panel {
@@ -212,8 +212,8 @@
   padding: 1rem;
   border: 1px solid var(--color-brand-line);
   color: var(--color-brand-ivory);
-  background: #211710;
-  box-shadow: 0 1rem 2rem rgb(0 0 0 / 22%);
+  background: var(--color-brand-deep);
+  box-shadow: 0 1rem 2rem color-mix(in srgb, var(--color-brand-deep) 22%, transparent);
 }
 
 .hours__panel p {
@@ -247,7 +247,7 @@
   display: flex;
   align-items: center;
   gap: .8rem;
-  color: rgb(247 239 227 / 75%);
+  color: color-mix(in srgb, var(--color-brand-ivory) 75%, transparent);
   font-size: .54rem;
   letter-spacing: .17em;
   text-decoration: none;
@@ -265,7 +265,7 @@
   .hero {
     grid-template-columns: 1fr;
     min-height: 850px;
-    padding-top: 9rem;
+    padding-top: 4rem;
   }
 
   .hero__image {
@@ -273,7 +273,7 @@
   }
 
   .hero__image::after {
-    background: linear-gradient(90deg, rgb(33 23 16 / 89%), rgb(33 23 16 / 55%) 72%, rgb(33 23 16 / 31%)), linear-gradient(0deg, #211710 0%, transparent 46%);
+    background: linear-gradient(90deg, color-mix(in srgb, var(--color-brand-deep) 89%, transparent), color-mix(in srgb, var(--color-brand-deep) 55%, transparent) 72%, color-mix(in srgb, var(--color-brand-deep) 31%, transparent)), linear-gradient(0deg, var(--color-brand-deep) 0%, transparent 46%);
   }
 
   .hero__content {
@@ -289,7 +289,7 @@
   .hero {
     min-height: max(800px, 100svh);
     align-content: center;
-    padding: 7.3rem var(--content-inline-edge) 5.8rem;
+    padding: 3rem var(--content-inline-edge) 5.8rem;
   }
 
   .hero__image img {
@@ -297,7 +297,7 @@
   }
 
   .hero__image::after {
-    background: linear-gradient(90deg, rgb(33 23 16 / 82%), rgb(33 23 16 / 56%) 100%), linear-gradient(0deg, #211710 0%, transparent 65%);
+    background: linear-gradient(90deg, color-mix(in srgb, var(--color-brand-deep) 82%, transparent), color-mix(in srgb, var(--color-brand-deep) 56%, transparent) 100%), linear-gradient(0deg, var(--color-brand-deep) 0%, transparent 65%);
   }
 
   .hero h1 {

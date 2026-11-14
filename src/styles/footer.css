@@ -29,7 +29,7 @@
 }
 
 .footer-editorial__shade {
-  background: linear-gradient(90deg, rgb(33 23 16 / 82%) 0%, rgb(33 23 16 / 48%) 48%, rgb(33 23 16 / 18%) 100%), linear-gradient(0deg, rgb(33 23 16 / 40%), transparent 55%);
+  background: linear-gradient(90deg, color-mix(in srgb, var(--color-brand-deep) 82%, transparent) 0%, color-mix(in srgb, var(--color-brand-deep) 48%, transparent) 48%, color-mix(in srgb, var(--color-brand-deep) 18%, transparent) 100%), linear-gradient(0deg, color-mix(in srgb, var(--color-brand-deep) 40%, transparent), transparent 55%);
 }
 
 .footer-editorial__content {
@@ -304,7 +304,7 @@
 }
 
 .site-footer__legal-pending small {
-  color: rgb(199 185 168 / 58%);
+  color: var(--color-brand-muted);
   font-size: .5rem;
 }
 
@@ -336,7 +336,7 @@
   .footer-editorial__image { object-position: 58% center; }
 
   .footer-editorial__shade {
-    background: linear-gradient(90deg, rgb(33 23 16 / 75%), rgb(33 23 16 / 34%)), linear-gradient(0deg, rgb(33 23 16 / 45%), transparent 65%);
+    background: linear-gradient(90deg, color-mix(in srgb, var(--color-brand-deep) 75%, transparent), color-mix(in srgb, var(--color-brand-deep) 34%, transparent)), linear-gradient(0deg, color-mix(in srgb, var(--color-brand-deep) 45%, transparent), transparent 65%);
   }
 
   .footer-editorial__content { padding-block: 3rem; }

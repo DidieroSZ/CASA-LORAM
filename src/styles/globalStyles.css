@@ -4,17 +4,22 @@
     --color-brand-coffee: #4b2e1e;
     --color-brand-sand: #b18a5d;
     --color-brand-ivory: #f7efe3;
+    --color-brand-canvas: #eee4d6;
     --color-brand-muted: #c7b9a8;
     --color-brand-panel: #302822;
     --color-brand-panel-deep: #221a15;
     --color-brand-leather: #8a6043;
     --color-brand-text-dark: #5d5147;
     --color-brand-line: rgb(247 239 227 / 18%);
+    --color-brand-status-open: #b6c49a;
+    --color-brand-status-open-bg: #354033;
+    --color-brand-status-closed-bg: #49372d;
     --font-primary: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
     --font-secondary: 'Manrope', 'Segoe UI', Arial, sans-serif;
     --font-accent: var(--font-primary);
     --font-display: var(--font-primary);
     --font-body: var(--font-secondary);
+    --font-navigation: 'Montserrat', var(--font-secondary);
     --page-gutter: clamp(1.25rem, 5vw, 5.5rem);
     --content-max-width: 75rem;
     --content-inline-edge: max(var(--page-gutter), calc((100% - var(--content-max-width)) / 2));
@@ -59,7 +64,7 @@ a {
 button:focus-visible,
 a:focus-visible,
 summary:focus-visible {
-    outline: 2px solid var(--color-brand-sand);
+    outline: 2px solid currentColor;
     outline-offset: 5px;
 }
 
@@ -84,6 +89,10 @@ img {
     letter-spacing: .2em;
     line-height: 1.4;
     text-transform: uppercase;
+}
+
+.eyebrow--dark {
+    color: var(--color-brand-coffee);
 }
 
 .eyebrow>span {
