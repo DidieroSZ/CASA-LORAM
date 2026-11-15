@@ -9,6 +9,7 @@ import {
   createElement,
 } from 'lucide';
 import footerBanner from '../assets/IMGS/cowboy-ranch.jpg';
+import footerBanner2 from '../assets/IMGS/cowboy-horse.png';
 import brandLogo from '../assets/Casa Loram Beige Longhorn Logo.png';
 import { contactConfig, getWhatsAppUrl } from './contact-config.js';
 import { footerConfig } from './footer-config.js';
@@ -63,7 +64,7 @@ export const initContactSection = () => {
       ? `<a class="site-footer__social-name" href="${escapeHtml(footerConfig.social.tiktok)}" target="_blank" rel="noopener noreferrer">TikTok</a>`
       : '<span class="site-footer__social-pending">TikTok · por configurar</span>',
     footerConfig.social.whatsapp && contactConfig.whatsapp
-      ? `<a class="site-footer__social-link" href="${escapeHtml(getWhatsAppUrl(contactConfig.whatsappMessage))}" target="_blank" rel="noopener noreferrer" aria-label="Escribir a Casa Loram por WhatsApp">${icon(MessageCircle)}</a>`
+      ? `<a class="site-footer__social-name" href="${escapeHtml(getWhatsAppUrl(contactConfig.whatsappMessage))}" target="_blank" rel="noopener noreferrer" aria-label="Escribir a Casa Loram por WhatsApp">WhatsApp</a>`
       : '',
   ].join('');
   const institutionalLinks = footerConfig.institutionalLinks.map((link) => link.href
@@ -73,7 +74,7 @@ export const initContactSection = () => {
   mount.innerHTML = `
     <footer class="site-footer" id="pie-pagina">
       <section class="footer-editorial" aria-labelledby="footer-editorial-title">
-        <img class="footer-editorial__image" src="${footerBanner}" alt="Vaquero a caballo en un paisaje abierto de rancho" width="4460" height="2977" loading="lazy" />
+        <img class="footer-editorial__image" src="${footerBanner2}" alt="Vaquero a caballo en un paisaje abierto de rancho" width="4460" height="2977" loading="lazy" />
         <div class="footer-editorial__shade" aria-hidden="true"></div>
         <div class="footer-editorial__content">
           <p class="footer-editorial__eyebrow">CASA LORAM · WESTERN CONTEMPORÁNEO</p>

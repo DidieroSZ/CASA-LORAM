@@ -6,6 +6,9 @@ export const contactConfig = {
   city: 'León de los Aldama',
   state: 'Gto.',
   postalCode: '37260',
+  instagram: 'https://www.instagram.com/casa_loram/',
+  facebook: 'https://www.facebook.com/profile.php?id=61594951050678',
+  tiktok: 'https://www.tiktok.com/@casa.loram.oficial',
   googleMapsUrl: 'https://www.google.com/maps/search/?api=1&query=C.%20Taxco%20303a%2C%20El%20Coecillo%2C%2037260%20Le%C3%B3n%20de%20los%20Aldama%2C%20Gto.',
   googleMapsEmbedUrl: 'https://maps.google.com/maps?q=C.%20Taxco%20303a%2C%20El%20Coecillo%2C%2037260%20Le%C3%B3n%20de%20los%20Aldama%2C%20Gto.&output=embed',
   schedule: [

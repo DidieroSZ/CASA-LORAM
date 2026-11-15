@@ -73,7 +73,15 @@ const KNOWN_BRANDS = [
   'Tombstone', 'Morcón', 'Indomables', 'Zargon',
 ];
 
+const COLOR_CATEGORIES = [
+  { id: 'negro', name: 'Negro', hex: '#28231f' },
+  { id: 'cafe', name: 'Café', hex: '#704322' },
+  { id: 'beige', name: 'Beige', hex: '#c8ad82' },
+  { id: 'blanco', name: 'Blanco', hex: '#f7efe3' },
+];
+
 const products = productData.products.filter((product) => product.active !== false);
+const activeSkins = skinData.skins.filter((skin) => skin.active);
 const money = new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN', maximumFractionDigits: 0 });
 
 const escapeHtml = (value = '') => String(value).replace(/[&<>"']/g, (character) => ({
@@ -84,27 +92,55 @@ const escapeHtml = (value = '') => String(value).replace(/[&<>"']/g, (character)
   "'": '&#39;',
 }[character]));
 
-const normalize = (value = '') => String(value).trim().toLocaleLowerCase('es-MX');
+const normalize = (value = '') => String(value)
+  .trim()
+  .replace(/\s+/g, ' ')
+  .toLocaleLowerCase('es-MX')
+  .normalize('NFD')
+  .replace(/[\u0300-\u036f]/g, '');
 const getBrandId = (brand) => normalize(brand);
 
-const getSkinOptions = () => skinData.skins
-  .filter((skin) => skin.active && products.some((product) => product.skinId === skin.id))
-  .map((skin) => ({ id: skin.id, name: skin.name }));
+const skinById = new Map(activeSkins.map((skin) => [normalize(skin.id), skin]));
+const skinByLabel = new Map(activeSkins.flatMap((skin) => [
+  [normalize(skin.id), skin],
+  [normalize(skin.name), skin],
+]));
+
+const getProductSkinIds = (product) => {
+  const ids = [
+    ...(Array.isArray(product.skinIds) ? product.skinIds : []),
+    product.skinId,
+    product.skinName,
+  ].filter(Boolean)
+    .map((value) => skinByLabel.get(normalize(value))?.id)
+    .filter(Boolean);
+  return [...new Set(ids)];
+};
+
+const getProductSkins = (product) => getProductSkinIds(product)
+  .map((skinId) => skinById.get(normalize(skinId)))
+  .filter(Boolean);
+
+const getSkinImage = (skin) => (skin.imageIds ?? [])
+  .map((imageId) => skinData.images.find((image) => image.id === imageId && image.skinId === skin.id))
+  .find(Boolean);
+
+const getSkinOptions = () => {
+  const availableIds = new Set(products.flatMap(getProductSkinIds).map(normalize));
+  return activeSkins
+    .filter((skin) => availableIds.has(normalize(skin.id)))
+    .map((skin) => ({ id: skin.id, name: skin.name }));
+};
+
+const getProductColorIds = (product) => [...new Set(
+  (Array.isArray(product.colorIds) ? product.colorIds : [product.colorId])
+    .filter(Boolean)
+    .map((colorId) => normalize(colorId)),
+)];
 
 const getColorOptions = () => {
-  const colors = new Map();
-  products.forEach((product) => {
-    const colorId = product.colorId;
-    const colorName = product.colorName;
-    if (colorId && colorName && !colors.has(colorId)) {
-      colors.set(colorId, {
-        id: colorId,
-        name: colorName,
-        hex: /^#[\da-f]{6}$/i.test(product.colorHex ?? '') ? product.colorHex : null,
-      });
-    }
-  });
-  return [...colors.values()];
+  const availableColors = new Set(products.flatMap(getProductColorIds));
+  return COLOR_CATEGORIES.filter((color) => availableColors.has(color.id));
 };
 
 const getPriceBounds = () => {
@@ -122,8 +158,11 @@ const hasActiveFilters = (state, bounds) => Boolean(
 
 const matchesProduct = (product, state, bounds) => {
   if (state.typeId && product.typeId !== state.typeId) return false;
-  if (state.skins.size && !state.skins.has(product.skinId)) return false;
-  if (state.colors.size && !state.colors.has(product.colorId)) return false;
+  if (state.skins.size) {
+    const selectedSkinIds = new Set([...state.skins].map(normalize));
+    if (!getProductSkinIds(product).some((skinId) => selectedSkinIds.has(normalize(skinId)))) return false;
+  }
+  if (state.colors.size && !getProductColorIds(product).some((colorId) => state.colors.has(colorId))) return false;
   if (state.brands.size && !state.brands.has(getBrandId(product.brand))) return false;
   if (isPriceActive(state, bounds) && (
     !Number.isFinite(product.price) || product.price < state.minPrice || product.price > state.maxPrice
@@ -153,8 +192,8 @@ const renderChoiceGroup = ({ title, className, options, stateValues, attribute, 
           ${options.map((option) => {
             const selected = stateValues.has(option.id);
             const available = products.some((product) => {
-              if (attribute === 'skin') return product.skinId === option.id;
-              if (attribute === 'color') return product.colorId === option.id;
+              if (attribute === 'skin') return getProductSkinIds(product).some((skinId) => normalize(skinId) === normalize(option.id));
+              if (attribute === 'color') return getProductColorIds(product).includes(normalize(option.id));
               return getBrandId(product.brand) === option.id;
             });
             return `<button class="catalog-chip${selected ? ' is-selected' : ''}" type="button" data-filter-${attribute}="${escapeHtml(option.id)}" aria-pressed="${selected}" ${available ? '' : 'disabled'}>
@@ -220,18 +259,46 @@ const renderFilters = (mount, state, bounds) => {
 const renderProductCard = (product) => {
   const type = PRODUCT_TYPES.find((entry) => entry.id === product.typeId);
   const image = getProductImages(product)[0];
+  const productSkins = getProductSkins(product);
+  const materialLabel = productSkins.map((skin) => skin.name).join(', ') || product.material;
   return `<article class="catalog-product-card">
     <button class="catalog-product-card__open" type="button" data-open-product="${escapeHtml(product.id)}" aria-label="Ver detalles de ${escapeHtml(product.name)}"><span class="catalog-product-card__content">
-      <span class="catalog-product-card__media">${image
-        ? `<img class="catalog-product-card__image" src="${escapeHtml(image.src)}" alt="${escapeHtml(image.alt ?? '')}" loading="lazy" />`
-        : '<span class="catalog-product-card__image catalog-product-card__image--empty" aria-hidden="true"></span>'}</span>
-    <span class="catalog-product-card__details">
-      ${type ? `<p>${type.name}</p>` : ''}
-      <h4>${escapeHtml(product.name)}</h4>
-      <small class="catalog-product-card__sample">Ejemplo de catálogo · datos de muestra</small>
-      ${product.brand ? `<span>${escapeHtml(product.brand)}</span>` : ''}
-      ${Number.isFinite(product.price) ? `<strong>${money.format(product.price)}</strong>` : ''}
-    </span></span></button>
+        <span class="catalog-product-card__media">
+          ${image
+            ? `<img class="catalog-product-card__image" src="${escapeHtml(image.src)}" alt="${escapeHtml(image.alt ?? '')}" loading="lazy" />`
+            : '<span class="catalog-product-card__image catalog-product-card__image--empty" aria-hidden="true"></span>'}
+        </span>
+
+          <span class="catalog-product-card__type">${type ? `<p>${type.name}</p>` : ''}</span>
+
+          <span class="catalog-product-card__details">
+          <table>
+            <colgroup>
+              <col style="width: 30%; text-align: right;">
+              <col style="width: auto; text-align: left;">
+            </colgroup>
+            <tbody>
+              <tr>
+                <td colspan="2"><h4>${escapeHtml(product.name)}</h4></td>
+              </tr>
+              <tr>
+                <td><p>Precio:</p></td>
+                <td>${Number.isFinite(product.price) ? `<strong>${money.format(product.price)}</strong>` : ''}</td>
+              </tr>
+              <tr>
+                <td><p>Marca:</p></td>
+                <td>${product.brand ? `<span>${escapeHtml(product.brand)}</span>` : ''}</td>
+              </tr>
+              <tr>
+                <td><p>Material:</p></td>
+                <td>${materialLabel ? `<span>${escapeHtml(materialLabel)}</span>` : ''}</td>
+              </tr>
+            </tbody>
+          </table>
+        </span>
+
+      </span>
+    </button>
   </article>`;
 };
 
@@ -240,11 +307,12 @@ const formatPrice = (price) => Number.isFinite(price) ? `${money.format(price)} 
 const renderProductDetail = (product) => {
   const type = PRODUCT_TYPES.find((entry) => entry.id === product.typeId);
   const images = getProductImages(product);
-  const material = product.material ?? product.skinName ?? product.skinId;
+  const material = product.material;
+  const productSkins = getProductSkins(product);
   const variants = product.variants ?? [];
   const specifications = [
-    ['Material', material], ['Piel', product.skinName], ['Horma', product.last], ['Estilo', product.style],
-    ['Calidad', product.quality], ['Color', product.colorName],
+    ['Material', material], ['Horma', product.last], ['Estilo', product.style],
+    ['Calidad', product.quality], ['Color', product.colorDetail ?? product.colorName],
     ['Tallas disponibles', Array.isArray(product.sizes) ? product.sizes.join(', ') : product.sizes],
   ].filter(([, value]) => value && String(value).trim());
   const careText = PRODUCT_CARE[product.careKey ?? material?.toLocaleLowerCase('es-MX')]
@@ -262,6 +330,13 @@ const renderProductDetail = (product) => {
     '', 'Me gustaría conocer más detalles sobre sus características y disponibilidad.', '¡Gracias!',
   ].filter(Boolean).join('\n');
   const whatsappUrl = getWhatsAppUrl(message);
+  const skinsSection = productSkins.length ? `<section class="product-detail__skins" aria-labelledby="product-detail-skins-title">
+        <h3 id="product-detail-skins-title">Pieles disponibles</h3>
+        <ul>${productSkins.map((skin) => {
+          const image = getSkinImage(skin);
+          return `<li>${image ? `<img src="${escapeHtml(image.src)}" alt="${escapeHtml(image.alt ?? skin.name)}" loading="lazy">` : ''}<span>${escapeHtml(skin.name)}</span></li>`;
+        }).join('')}</ul>
+      </section>` : '';
   return `<div class="product-detail">
     <div class="product-detail__gallery">
       ${images.length ? `<div class="product-detail__media"><img class="product-detail__image" src="${escapeHtml(images[0].src)}" alt="${escapeHtml(images[0].alt ?? product.name)}"></div>${images.length > 1 ? `<div class="product-detail__thumbnails">${images.map((image, index) => `<button type="button" data-detail-image="${index}" aria-label="Ver fotografía ${index + 1}" aria-pressed="${index === 0}"><img src="${escapeHtml(image.src)}" alt=""></button>`).join('')}</div>` : ''}` : '<div class="product-detail__media product-detail__image--empty" aria-label="Fotografía no disponible"></div>'}
@@ -273,6 +348,7 @@ const renderProductDetail = (product) => {
       ${product.sku ? `<p class="product-detail__sku">SKU: ${escapeHtml(product.sku)}</p>` : ''}
       <p class="product-detail__price">${formatPrice(product.price)}</p>
       ${product.description ? `<p class="product-detail__description">${escapeHtml(product.description)}</p>` : ''}
+      ${skinsSection}
       ${variants.length ? `<fieldset class="product-detail__variants"><legend>Variantes disponibles</legend><div>${variants.map((variant, index) => `<label><input type="radio" name="product-variant" value="${index}" ${index === 0 ? 'checked' : ''}><span>${escapeHtml(variant.name ?? variant.value ?? variant.color ?? variant.size ?? '')}</span></label>`).join('')}</div></fieldset>` : ''}
       ${specifications.length ? `<section class="product-detail__specs"><h3>Características</h3><dl>${specifications.map(([label, value]) => `<div><dt>${escapeHtml(label)}</dt><dd>${escapeHtml(Array.isArray(value) ? value.join(', ') : value)}</dd></div>`).join('')}</dl></section>` : ''}
       ${material ? `<section class="product-detail__care"><h3>Cuidados y conservación</h3><p>${escapeHtml(careText)}</p></section>` : ''}
@@ -492,7 +568,7 @@ export const initProductCatalog = () => {
       const selected = button.hasAttribute('data-filter-skin')
         ? state.skins.has(button.dataset.filterSkin)
         : button.hasAttribute('data-filter-color')
-          ? state.colors.has(button.dataset.filterColor)
+          ? state.colors.has(normalize(button.dataset.filterColor))
           : state.brands.has(button.dataset.filterBrand);
       button.classList.toggle('is-selected', selected);
       button.setAttribute('aria-pressed', String(selected));
@@ -521,7 +597,8 @@ export const initProductCatalog = () => {
       state.skins.has(id) ? state.skins.delete(id) : state.skins.add(id);
     } else if (button.hasAttribute('data-filter-color')) {
       const id = button.dataset.filterColor;
-      state.colors.has(id) ? state.colors.delete(id) : state.colors.add(id);
+      const colorId = normalize(id);
+      state.colors.has(colorId) ? state.colors.delete(colorId) : state.colors.add(colorId);
     } else if (button.hasAttribute('data-filter-brand')) {
       const id = button.dataset.filterBrand;
       state.brands.has(id) ? state.brands.delete(id) : state.brands.add(id);

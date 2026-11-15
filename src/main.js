@@ -7,6 +7,7 @@ import './styles/intro.css';
 import './styles/productCatalog.css';
 import './styles/contact.css';
 import heroImage from './assets/casa-loram-hero.png';
+import heroImage2 from './assets/IMGS/landscape.png';
 import brandLogo from './assets/Casa Loram Beige Longhorn Logo.png';
 import { createElement } from 'lucide';
 import { ArrowDownRight, Clock3, MapPin, PackageOpen, MessageCircle } from 'lucide';
@@ -37,7 +38,7 @@ document.querySelector('#app').innerHTML = `
       <a href="#catalogo" data-nav-link>Catálogo</a>
       <a href="#coleccion" data-nav-link>Pieles</a>
       <a href="#contacto" data-nav-link>Contacto</a>
-      <a class="navigation-cta" href="${getWhatsAppUrl(contactConfig.whatsappMessage)}" target="_blank" rel="noopener noreferrer">Contactar ${icon(MessageCircle, 'navigation-cta__icon')}</a>
+      <a class="navigation-cta" href="${getWhatsAppUrl(contactConfig.whatsappMessage)}" target="_blank" rel="noopener noreferrer">Escríbenos ${icon(MessageCircle, 'navigation-cta__icon')}</a>
     </nav>
     <div class="header-hours" aria-label="Horarios de atención">
       ${icon(Clock3, 'header-hours__icon')}
@@ -59,7 +60,7 @@ document.querySelector('#app').innerHTML = `
     <!-- Section hero INICIA -->
     <section class="hero" id="inicio" aria-labelledby="hero-title">
       <div class="hero__image">
-        <img src="${heroImage}" alt="Botas western, sombrero y cinturón de piel en un taller de cuero" fetchpriority="high" />
+        <img src="${heroImage2}" alt="Botas western, sombrero y cinturón de piel en un taller de cuero" fetchpriority="high" />
       </div>
       <div class="hero__content">
         <p class="eyebrow"><span></span> Hecho para dejar huella</p>

@@ -1,13 +1,13 @@
 .hero {
   position: relative;
   display: grid;
-  grid-template-columns: minmax(0, 1.02fr) minmax(24rem, .98fr);
+  grid-template-columns: minmax(0, 1fr) minmax(24rem, .98fr);
   align-items: center;
   min-height: min(850px, 100svh);
   padding: 4.25rem var(--content-inline-edge);
   overflow: hidden;
   isolation: isolate;
-  background: var(--color-brand-deep);
+  background: var(--color-black-deep);
 }
 
 .hero__image {
@@ -21,7 +21,7 @@
   position: absolute;
   inset: 0;
   content: '';
-  background: linear-gradient(90deg, var(--color-brand-deep) 0%, color-mix(in srgb, var(--color-brand-deep) 80%, transparent) 13%, color-mix(in srgb, var(--color-brand-deep) 15%, transparent) 56%, color-mix(in srgb, var(--color-brand-deep) 5%, transparent) 100%), linear-gradient(0deg, color-mix(in srgb, var(--color-brand-deep) 46%, transparent), transparent 38%);
+  background: linear-gradient(90deg, var(--color-black-deep) 0%, color-mix(in srgb, var(--color-black-deep) 80%, transparent) 13%, color-mix(in srgb, var(--color-black-deep) 15%, transparent) 56%, color-mix(in srgb, var(--color-black-deep) 5%, transparent) 100%), linear-gradient(0deg, color-mix(in srgb, var(--color-black-deep) 46%, transparent), transparent 38%);
 }
 
 .hero__image img {
@@ -49,7 +49,7 @@
 .collection h2,
 .contact-strip h2 {
   margin: 1.35rem 0 1.1rem;
-  font: 400 clamp(3.1rem, 5.5vw, 5.6rem)/.98 var(--font-display);
+  font: 600 clamp(3.1rem, 5.5vw, 5.6rem)/.98 var(--font-display);
   letter-spacing: -.045em;
 }
 
@@ -57,7 +57,7 @@
 .collection h2 em,
 .contact-strip h2 em {
   color: var(--color-brand-sand);
-  font-weight: 400;
+  font-weight: 600;
 }
 
 .hero__description {
