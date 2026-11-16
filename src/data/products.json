@@ -2,17 +2,19 @@
   "products": [
     {
       "id": "demo-bota-rancho",
+      "skinIds": [
+        "res"
+      ],
       "name": "Bota Rancho de Res",
       "typeId": "botas",
       "active": true,
       "brand": "Malcreado",
       "sku": "MUESTRA-BOT-001",
       "price": 3850,
-      "colorId": "cafe-oscuro",
-      "colorName": "Café oscuro",
-      "colorHex": "#553322",
+      "colorId": "cafe",
+      "colorName": "Café",
+      "colorHex": "#704322",
       "material": "Piel de res",
-      "skinName": "Res",
       "last": "Bulldog",
       "sizes": [
         "25",
@@ -30,21 +32,30 @@
           "name": "Café oscuro",
           "color": "Café oscuro"
         }
+      ],
+      "colorDetail": "Café oscuro",
+      "colorIds": [
+        "cafe"
+      ],
+      "colorNames": [
+        "Café"
       ]
     },
     {
       "id": "demo-botin-urbano",
+      "skinIds": [
+        "res"
+      ],
       "name": "Botín Urbano de Piel",
       "typeId": "botines",
       "active": true,
       "brand": "Ariat",
       "sku": "MUESTRA-BTN-002",
       "price": 3290,
-      "colorId": "miel",
-      "colorName": "Miel",
-      "colorHex": "#98633e",
+      "colorId": "cafe",
+      "colorName": "Café",
+      "colorHex": "#704322",
       "material": "Piel de res",
-      "skinName": "Res",
       "last": "Oval",
       "sizes": [
         "25",
@@ -61,6 +72,13 @@
           "name": "Miel",
           "color": "Miel"
         }
+      ],
+      "colorDetail": "Miel",
+      "colorIds": [
+        "cafe"
+      ],
+      "colorNames": [
+        "Café"
       ]
     },
     {
@@ -71,8 +89,8 @@
       "brand": "Correcaminos",
       "sku": "MUESTRA-TEX-003",
       "price": 2450,
-      "colorId": "arena",
-      "colorName": "Arena",
+      "colorId": "beige",
+      "colorName": "Beige",
       "colorHex": "#c8ad82",
       "material": "Lana",
       "quality": "10X",
@@ -92,6 +110,13 @@
           "name": "Arena",
           "color": "Arena"
         }
+      ],
+      "colorDetail": "Arena",
+      "colorIds": [
+        "beige"
+      ],
+      "colorNames": [
+        "Beige"
       ]
     },
     {
@@ -121,21 +146,30 @@
           "name": "Negro",
           "color": "Negro"
         }
+      ],
+      "colorDetail": "Negro",
+      "colorIds": [
+        "negro"
+      ],
+      "colorNames": [
+        "Negro"
       ]
     },
     {
       "id": "demo-cinturon-tradicion",
+      "skinIds": [
+        "res"
+      ],
       "name": "Cinturón Tradición",
       "typeId": "cinturones",
       "active": true,
       "brand": "Almeida",
       "sku": "MUESTRA-CIN-005",
       "price": 1190,
-      "colorId": "chocolate",
-      "colorName": "Chocolate",
-      "colorHex": "#4c2e20",
+      "colorId": "cafe",
+      "colorName": "Café",
+      "colorHex": "#704322",
       "material": "Piel de res",
-      "skinName": "Res",
       "sizes": [
         "30",
         "32",
@@ -152,21 +186,30 @@
           "name": "Chocolate",
           "color": "Chocolate"
         }
+      ],
+      "colorDetail": "Chocolate",
+      "colorIds": [
+        "cafe"
+      ],
+      "colorNames": [
+        "Café"
       ]
     },
     {
       "id": "demo-bota-bordado-rancho",
+      "skinIds": [
+        "res"
+      ],
       "name": "Bota Bordado Rancho",
       "typeId": "botas",
       "active": true,
       "brand": "Malcreado",
       "sku": "MUESTRA-BOT-101",
       "price": 4290,
-      "colorId": "cafe-cognac",
-      "colorName": "Cognac",
-      "colorHex": "#8a4e2b",
+      "colorId": "cafe",
+      "colorName": "Café",
+      "colorHex": "#704322",
       "material": "Piel de res",
-      "skinName": "Res",
       "last": "Bulldog",
       "sizes": [
         "25",
@@ -184,6 +227,13 @@
           "name": "Cognac",
           "color": "Cognac"
         }
+      ],
+      "colorDetail": "Cognac",
+      "colorIds": [
+        "cafe"
+      ],
+      "colorNames": [
+        "Café"
       ]
     },
     {
@@ -194,11 +244,10 @@
       "brand": "Tombstone",
       "sku": "MUESTRA-BOT-102",
       "price": 4890,
-      "colorId": "negro-textura",
-      "colorName": "Negro texturizado",
-      "colorHex": "#24201f",
+      "colorId": "negro",
+      "colorName": "Negro",
+      "colorHex": "#28231f",
       "material": "Piel con acabado texturizado",
-      "skinName": "Acabado tipo reptil",
       "last": "Oval",
       "sizes": [
         "25",
@@ -215,6 +264,13 @@
           "name": "Negro texturizado",
           "color": "Negro texturizado"
         }
+      ],
+      "colorDetail": "Negro texturizado",
+      "colorIds": [
+        "negro"
+      ],
+      "colorNames": [
+        "Negro"
       ]
     },
     {
@@ -225,11 +281,10 @@
       "brand": "Correcaminos",
       "sku": "MUESTRA-BOT-103",
       "price": 4590,
-      "colorId": "perla-cafe",
-      "colorName": "Perla y café",
-      "colorHex": "#d8c4a3",
+      "colorId": "beige",
+      "colorName": "Beige y Café",
+      "colorHex": "#c8ad82",
       "material": "Piel con acabado texturizado",
-      "skinName": "Textura granulada",
       "last": "Dubái",
       "sizes": [
         "25",
@@ -246,21 +301,32 @@
           "name": "Perla y café",
           "color": "Perla y café"
         }
+      ],
+      "colorDetail": "Perla y café",
+      "colorIds": [
+        "beige",
+        "cafe"
+      ],
+      "colorNames": [
+        "Beige",
+        "Café"
       ]
     },
     {
       "id": "demo-bota-carbon",
+      "skinIds": [
+        "res"
+      ],
       "name": "Bota Carbón Bordada",
       "typeId": "botas",
       "active": true,
       "brand": "Ariat",
       "sku": "MUESTRA-BOT-104",
       "price": 4150,
-      "colorId": "carbon",
-      "colorName": "Carbón",
-      "colorHex": "#302a27",
+      "colorId": "negro",
+      "colorName": "Negro",
+      "colorHex": "#28231f",
       "material": "Piel de res",
-      "skinName": "Res",
       "last": "Bulldog",
       "sizes": [
         "25",
@@ -278,6 +344,13 @@
           "name": "Carbón",
           "color": "Carbón"
         }
+      ],
+      "colorDetail": "Carbón",
+      "colorIds": [
+        "negro"
+      ],
+      "colorNames": [
+        "Negro"
       ]
     },
     {
@@ -288,11 +361,10 @@
       "brand": "Malcreado",
       "sku": "MUESTRA-BOT-105",
       "price": 5290,
-      "colorId": "arena-piton",
-      "colorName": "Arena estampado",
-      "colorHex": "#b89a71",
+      "colorId": "beige",
+      "colorName": "Beige",
+      "colorHex": "#c8ad82",
       "material": "Piel con acabado estampado",
-      "skinName": "Patrón tipo pitón",
       "last": "Oval",
       "sizes": [
         "25",
@@ -309,21 +381,30 @@
           "name": "Arena estampado",
           "color": "Arena estampado"
         }
+      ],
+      "colorDetail": "Arena estampado",
+      "colorIds": [
+        "beige"
+      ],
+      "colorNames": [
+        "Beige"
       ]
     },
     {
       "id": "demo-bota-herencia",
+      "skinIds": [
+        "res"
+      ],
       "name": "Bota Herencia Bordada",
       "typeId": "botas",
       "active": true,
       "brand": "Tombstone",
       "sku": "MUESTRA-BOT-106",
       "price": 4450,
-      "colorId": "tabaco",
-      "colorName": "Tabaco",
+      "colorId": "cafe",
+      "colorName": "Café",
       "colorHex": "#704322",
       "material": "Piel de res",
-      "skinName": "Res",
       "last": "Bulldog",
       "sizes": [
         "25",
@@ -341,21 +422,30 @@
           "name": "Tabaco",
           "color": "Tabaco"
         }
+      ],
+      "colorDetail": "Tabaco",
+      "colorIds": [
+        "cafe"
+      ],
+      "colorNames": [
+        "Café"
       ]
     },
     {
       "id": "demo-bota-arriera",
+      "skinIds": [
+        "res"
+      ],
       "name": "Bota Arriera Clásica",
       "typeId": "botas",
       "active": true,
       "brand": "Correcaminos",
       "sku": "MUESTRA-BOT-107",
       "price": 3990,
-      "colorId": "chocolate-rustico",
-      "colorName": "Chocolate rústico",
-      "colorHex": "#5d3825",
+      "colorId": "cafe",
+      "colorName": "Café",
+      "colorHex": "#704322",
       "material": "Piel de res",
-      "skinName": "Res",
       "last": "Dubái",
       "sizes": [
         "25",
@@ -372,21 +462,30 @@
           "name": "Chocolate rústico",
           "color": "Chocolate rústico"
         }
+      ],
+      "colorDetail": "Chocolate rústico",
+      "colorIds": [
+        "cafe"
+      ],
+      "colorNames": [
+        "Café"
       ]
     },
     {
       "id": "demo-bota-suroeste",
+      "skinIds": [
+        "res"
+      ],
       "name": "Bota Suroeste Labrada",
       "typeId": "botas",
       "active": true,
       "brand": "Ariat",
       "sku": "MUESTRA-BOT-108",
       "price": 4690,
-      "colorId": "miel-tabaco",
-      "colorName": "Miel y tabaco",
-      "colorHex": "#9a653b",
+      "colorId": "cafe",
+      "colorName": "Café",
+      "colorHex": "#704322",
       "material": "Piel de res",
-      "skinName": "Res",
       "last": "Oval",
       "sizes": [
         "25",
@@ -404,21 +503,30 @@
           "name": "Miel y tabaco",
           "color": "Miel y tabaco"
         }
+      ],
+      "colorDetail": "Miel y tabaco",
+      "colorIds": [
+        "cafe"
+      ],
+      "colorNames": [
+        "Café"
       ]
     },
     {
       "id": "demo-bota-pionera",
+      "skinIds": [
+        "res"
+      ],
       "name": "Bota Pionera de Campo",
       "typeId": "botas",
       "active": true,
       "brand": "Malcreado",
       "sku": "MUESTRA-BOT-109",
       "price": 4190,
-      "colorId": "cafe-campo",
-      "colorName": "Café campo",
-      "colorHex": "#74462d",
+      "colorId": "cafe",
+      "colorName": "Café",
+      "colorHex": "#704322",
       "material": "Piel de res",
-      "skinName": "Res",
       "last": "Bulldog",
       "sizes": [
         "25",
@@ -435,21 +543,30 @@
           "name": "Café campo",
           "color": "Café campo"
         }
+      ],
+      "colorDetail": "Café campo",
+      "colorIds": [
+        "cafe"
+      ],
+      "colorNames": [
+        "Café"
       ]
     },
     {
       "id": "demo-bota-sendero",
+      "skinIds": [
+        "res"
+      ],
       "name": "Bota Sendero Clásica",
       "typeId": "botas",
       "active": true,
       "brand": "Tombstone",
       "sku": "MUESTRA-BOT-110",
       "price": 4390,
-      "colorId": "cuero-natural",
-      "colorName": "Cuero natural",
-      "colorHex": "#815332",
+      "colorId": "cafe",
+      "colorName": "Café",
+      "colorHex": "#704322",
       "material": "Piel de res",
-      "skinName": "Res",
       "last": "Dubái",
       "sizes": [
         "25",
@@ -467,21 +584,30 @@
           "name": "Cuero natural",
           "color": "Cuero natural"
         }
+      ],
+      "colorDetail": "Cuero natural",
+      "colorIds": [
+        "cafe"
+      ],
+      "colorNames": [
+        "Café"
       ]
     },
     {
       "id": "demo-botin-elastico",
+      "skinIds": [
+        "res"
+      ],
       "name": "Botín Elástico Cognac",
       "typeId": "botines",
       "active": true,
       "brand": "Ariat",
       "sku": "MUESTRA-BTN-101",
       "price": 2890,
-      "colorId": "cognac",
-      "colorName": "Cognac",
-      "colorHex": "#8b4e2d",
+      "colorId": "cafe",
+      "colorName": "Café",
+      "colorHex": "#704322",
       "material": "Piel de res",
-      "skinName": "Res",
       "last": "Oval",
       "sizes": [
         "25",
@@ -498,10 +624,20 @@
           "name": "Cognac",
           "color": "Cognac"
         }
+      ],
+      "colorDetail": "Cognac",
+      "colorIds": [
+        "cafe"
+      ],
+      "colorNames": [
+        "Café"
       ]
     },
     {
       "id": "demo-botin-hebilla",
+      "skinIds": [
+        "res"
+      ],
       "name": "Botín Hebilla del Oeste",
       "typeId": "botines",
       "active": true,
@@ -510,9 +646,8 @@
       "price": 3150,
       "colorId": "negro",
       "colorName": "Negro",
-      "colorHex": "#262321",
+      "colorHex": "#28231f",
       "material": "Piel de res",
-      "skinName": "Res",
       "last": "Bulldog",
       "sizes": [
         "25",
@@ -530,21 +665,30 @@
           "name": "Negro",
           "color": "Negro"
         }
+      ],
+      "colorDetail": "Negro",
+      "colorIds": [
+        "negro"
+      ],
+      "colorNames": [
+        "Negro"
       ]
     },
     {
       "id": "demo-botin-campero",
+      "skinIds": [
+        "res"
+      ],
       "name": "Botín Campero Arena",
       "typeId": "botines",
       "active": true,
       "brand": "Correcaminos",
       "sku": "MUESTRA-BTN-103",
       "price": 2690,
-      "colorId": "arena",
-      "colorName": "Arena",
-      "colorHex": "#a8794f",
+      "colorId": "beige",
+      "colorName": "Beige",
+      "colorHex": "#c8ad82",
       "material": "Piel de res",
-      "skinName": "Res",
       "last": "Oval",
       "sizes": [
         "25",
@@ -561,6 +705,13 @@
           "name": "Arena",
           "color": "Arena"
         }
+      ],
+      "colorDetail": "Arena",
+      "colorIds": [
+        "beige"
+      ],
+      "colorNames": [
+        "Beige"
       ]
     },
     {
@@ -571,11 +722,10 @@
       "brand": "Tombstone",
       "sku": "MUESTRA-BTN-104",
       "price": 3390,
-      "colorId": "chocolate",
-      "colorName": "Chocolate",
-      "colorHex": "#563a2a",
+      "colorId": "cafe",
+      "colorName": "Café",
+      "colorHex": "#704322",
       "material": "Piel con acabado texturizado",
-      "skinName": "Acabado tipo reptil",
       "last": "Dubái",
       "sizes": [
         "25",
@@ -592,21 +742,30 @@
           "name": "Chocolate",
           "color": "Chocolate"
         }
+      ],
+      "colorDetail": "Chocolate",
+      "colorIds": [
+        "cafe"
+      ],
+      "colorNames": [
+        "Café"
       ]
     },
     {
       "id": "demo-botin-nocturno",
+      "skinIds": [
+        "res"
+      ],
       "name": "Botín Nocturno Bordado",
       "typeId": "botines",
       "active": true,
       "brand": "Almeida",
       "sku": "MUESTRA-BTN-105",
       "price": 2990,
-      "colorId": "negro-mate",
-      "colorName": "Negro mate",
-      "colorHex": "#211e1c",
+      "colorId": "negro",
+      "colorName": "Negro",
+      "colorHex": "#28231f",
       "material": "Piel de res",
-      "skinName": "Res",
       "last": "Oval",
       "sizes": [
         "25",
@@ -624,21 +783,30 @@
           "name": "Negro mate",
           "color": "Negro mate"
         }
+      ],
+      "colorDetail": "Negro mate",
+      "colorIds": [
+        "negro"
+      ],
+      "colorNames": [
+        "Negro"
       ]
     },
     {
       "id": "demo-cinturon-labrado",
+      "skinIds": [
+        "res"
+      ],
       "name": "Cinturón Labrado del Rancho",
       "typeId": "cinturones",
       "active": true,
       "brand": "Almeida",
       "sku": "MUESTRA-CIN-101",
       "price": 1390,
-      "colorId": "cafe-labrado",
-      "colorName": "Café labrado",
-      "colorHex": "#59351f",
+      "colorId": "cafe",
+      "colorName": "Café",
+      "colorHex": "#704322",
       "material": "Piel de res",
-      "skinName": "Res",
       "sizes": [
         "30",
         "32",
@@ -656,21 +824,30 @@
           "name": "Café labrado",
           "color": "Café labrado"
         }
+      ],
+      "colorDetail": "Café labrado",
+      "colorIds": [
+        "cafe"
+      ],
+      "colorNames": [
+        "Café"
       ]
     },
     {
       "id": "demo-cinturon-geometrico",
+      "skinIds": [
+        "res"
+      ],
       "name": "Cinturón Geométrico Vaquero",
       "typeId": "cinturones",
       "active": true,
       "brand": "Correcaminos",
       "sku": "MUESTRA-CIN-102",
       "price": 1290,
-      "colorId": "cafe-miel",
-      "colorName": "Café y miel",
-      "colorHex": "#80502f",
+      "colorId": "cafe",
+      "colorName": "Café",
+      "colorHex": "#704322",
       "material": "Piel de res con bordado decorativo",
-      "skinName": "Res",
       "sizes": [
         "30",
         "32",
@@ -687,21 +864,30 @@
           "name": "Café y miel",
           "color": "Café y miel"
         }
+      ],
+      "colorDetail": "Café y miel",
+      "colorIds": [
+        "cafe"
+      ],
+      "colorNames": [
+        "Café"
       ]
     },
     {
       "id": "demo-cinturon-estrella",
+      "skinIds": [
+        "res"
+      ],
       "name": "Cinturón Estrella del Camino",
       "typeId": "cinturones",
       "active": true,
       "brand": "Malcreado",
       "sku": "MUESTRA-CIN-103",
       "price": 1590,
-      "colorId": "negro-conchos",
-      "colorName": "Negro con detalles metálicos",
-      "colorHex": "#252321",
+      "colorId": "negro",
+      "colorName": "Negro",
+      "colorHex": "#28231f",
       "material": "Piel de res",
-      "skinName": "Res",
       "sizes": [
         "30",
         "32",
@@ -719,6 +905,13 @@
           "name": "Negro con detalles metálicos",
           "color": "Negro con detalles metálicos"
         }
+      ],
+      "colorDetail": "Negro con detalles metálicos",
+      "colorIds": [
+        "negro"
+      ],
+      "colorNames": [
+        "Negro"
       ]
     },
     {
@@ -729,9 +922,9 @@
       "brand": "Morcón",
       "sku": "MUESTRA-SOM-101",
       "price": 1890,
-      "colorId": "marfil",
-      "colorName": "Marfil",
-      "colorHex": "#e1d0b1",
+      "colorId": "beige",
+      "colorName": "Beige",
+      "colorHex": "#c8ad82",
       "material": "Paja natural",
       "quality": "10X",
       "style": "Ala amplia",
@@ -751,6 +944,13 @@
           "name": "Marfil",
           "color": "Marfil"
         }
+      ],
+      "colorDetail": "Marfil",
+      "colorIds": [
+        "beige"
+      ],
+      "colorNames": [
+        "Beige"
       ]
     },
     {
@@ -761,9 +961,9 @@
       "brand": "Indomables",
       "sku": "MUESTRA-TEX-101",
       "price": 2290,
-      "colorId": "cacao",
-      "colorName": "Cacao",
-      "colorHex": "#3e2b22",
+      "colorId": "cafe",
+      "colorName": "Café",
+      "colorHex": "#704322",
       "material": "Lana",
       "quality": "10X",
       "style": "Copa cattleman",
@@ -783,6 +983,338 @@
           "name": "Cacao",
           "color": "Cacao"
         }
+      ],
+      "colorDetail": "Cacao",
+      "colorIds": [
+        "cafe"
+      ],
+      "colorNames": [
+        "Café"
+      ]
+    },
+    {
+      "id": "demo-bota-venado-rustica",
+      "skinIds": [
+        "venado"
+      ],
+      "name": "Bota Venado Sierra",
+      "typeId": "botas",
+      "active": true,
+      "brand": "Correcaminos",
+      "sku": "MUESTRA-BOT-201",
+      "price": 5790,
+      "colorId": "beige",
+      "colorName": "Beige",
+      "colorHex": "#c8ad82",
+      "material": "Piel de venado",
+      "last": "Bulldog",
+      "sizes": [
+        "25",
+        "26",
+        "27",
+        "28",
+        "29",
+        "30"
+      ],
+      "imageKey": "bota_01.png",
+      "imageAlt": "Bota western de piel con acabado café claro",
+      "description": "Bota western de piel de venado integrada, con acabado natural y bordado de inspiración serrana.",
+      "variants": [
+        {
+          "name": "Arena natural",
+          "color": "Arena natural"
+        }
+      ],
+      "colorDetail": "Arena natural",
+      "colorIds": [
+        "beige"
+      ],
+      "colorNames": [
+        "Beige"
+      ]
+    },
+    {
+      "id": "demo-bota-cuello-toro",
+      "skinIds": [
+        "cuello-de-toro"
+      ],
+      "name": "Bota Cuello de Toro Hacienda",
+      "typeId": "botas",
+      "active": true,
+      "brand": "Malcreado",
+      "sku": "MUESTRA-BOT-202",
+      "price": 6290,
+      "colorId": "cafe",
+      "colorName": "Café",
+      "colorHex": "#704322",
+      "material": "Piel de cuello de toro",
+      "last": "Oval",
+      "sizes": [
+        "25",
+        "26",
+        "27",
+        "28",
+        "29"
+      ],
+      "imageKey": "bota_02.png",
+      "imageAlt": "Bota western café oscura con textura marcada",
+      "description": "Bota de caña alta elaborada en piel de cuello de toro integrada, con textura natural y costuras western.",
+      "variants": [
+        {
+          "name": "Tabaco",
+          "color": "Tabaco"
+        }
+      ],
+      "colorDetail": "Tabaco",
+      "colorIds": [
+        "cafe"
+      ],
+      "colorNames": [
+        "Café"
+      ]
+    },
+    {
+      "id": "demo-bota-pelo-vaca",
+      "skinIds": [
+        "pelo-de-vaca"
+      ],
+      "name": "Bota Pelo de Vaca Frontera",
+      "typeId": "botas",
+      "active": true,
+      "brand": "Tombstone",
+      "sku": "MUESTRA-BOT-203",
+      "price": 6890,
+      "colorId": "blanco",
+      "colorName": "Blanco y Negro",
+      "colorHex": "#f7efe3",
+      "material": "Piel con pelo de vaca",
+      "last": "Dubái",
+      "sizes": [
+        "25",
+        "26",
+        "27",
+        "28",
+        "29"
+      ],
+      "imageKey": "bota_03.png",
+      "imageAlt": "Bota western bicolor de estilo artesanal",
+      "description": "Modelo western con piel de pelo de vaca integrada en el diseño y acabados contrastantes.",
+      "variants": [
+        {
+          "name": "Blanco y negro",
+          "color": "Blanco y negro"
+        }
+      ],
+      "colorDetail": "Blanco y negro",
+      "colorIds": [
+        "blanco",
+        "negro"
+      ],
+      "colorNames": [
+        "Blanco",
+        "Negro"
+      ]
+    },
+    {
+      "id": "demo-bota-piton-norte",
+      "skinIds": [
+        "piton"
+      ],
+      "name": "Bota Pitón Norteña",
+      "typeId": "botas",
+      "active": true,
+      "brand": "Ariat",
+      "sku": "MUESTRA-BOT-204",
+      "price": 8490,
+      "colorId": "cafe",
+      "colorName": "Café",
+      "colorHex": "#704322",
+      "material": "Piel de pitón integrada",
+      "last": "Oval",
+      "sizes": [
+        "25",
+        "26",
+        "27",
+        "28",
+        "29"
+      ],
+      "imageKey": "bota_05.png",
+      "imageAlt": "Bota western con acabado estampado en tonos miel",
+      "description": "Bota western con paneles de piel de pitón integrada y tonalidad miel de carácter distintivo.",
+      "variants": [
+        {
+          "name": "Miel estampado",
+          "color": "Miel estampado"
+        }
+      ],
+      "colorDetail": "Miel estampado",
+      "colorIds": [
+        "cafe"
+      ],
+      "colorNames": [
+        "Café"
+      ]
+    },
+    {
+      "id": "demo-bota-avestruz",
+      "skinIds": [
+        "avestruz"
+      ],
+      "name": "Bota Avestruz Real",
+      "typeId": "botas",
+      "active": true,
+      "brand": "Malcreado",
+      "sku": "MUESTRA-BOT-205",
+      "price": 9290,
+      "colorId": "cafe",
+      "colorName": "Café",
+      "colorHex": "#704322",
+      "material": "Piel de avestruz integrada",
+      "last": "Bulldog",
+      "sizes": [
+        "25",
+        "26",
+        "27",
+        "28",
+        "29",
+        "30"
+      ],
+      "imageKey": "bota_04.png",
+      "imageAlt": "Bota western cognac con bordado tono sobre tono",
+      "description": "Bota de piel de avestruz integrada, con acabado cognac y líneas de bordado clásico.",
+      "variants": [
+        {
+          "name": "Cognac",
+          "color": "Cognac"
+        }
+      ],
+      "colorDetail": "Cognac",
+      "colorIds": [
+        "cafe"
+      ],
+      "colorNames": [
+        "Café"
+      ]
+    },
+    {
+      "id": "demo-botin-venado-campo",
+      "skinIds": [
+        "venado"
+      ],
+      "name": "Botín Venado del Campo",
+      "typeId": "botines",
+      "active": true,
+      "brand": "Correcaminos",
+      "sku": "MUESTRA-BTN-201",
+      "price": 4890,
+      "colorId": "cafe",
+      "colorName": "Café",
+      "colorHex": "#704322",
+      "material": "Piel de venado",
+      "last": "Redonda",
+      "sizes": [
+        "25",
+        "26",
+        "27",
+        "28",
+        "29"
+      ],
+      "imageKey": "botin_01.png",
+      "imageAlt": "Botín western café de perfil bajo",
+      "description": "Botín de perfil versátil en piel de venado integrada, con acabado miel y detalles sobrios.",
+      "variants": [
+        {
+          "name": "Miel",
+          "color": "Miel"
+        }
+      ],
+      "colorDetail": "Miel",
+      "colorIds": [
+        "cafe"
+      ],
+      "colorNames": [
+        "Café"
+      ]
+    },
+    {
+      "id": "demo-botin-cocodrilo",
+      "skinIds": [
+        "cocodrilo-panza"
+      ],
+      "name": "Botín Cocodrilo Ejecutivo",
+      "typeId": "botines",
+      "active": true,
+      "brand": "Tombstone",
+      "sku": "MUESTRA-BTN-202",
+      "price": 9890,
+      "colorId": "negro",
+      "colorName": "Negro",
+      "colorHex": "#28231f",
+      "material": "Piel de cocodrilo (panza) integrada",
+      "last": "Oval",
+      "sizes": [
+        "25",
+        "26",
+        "27",
+        "28",
+        "29"
+      ],
+      "imageKey": "botin_02.png",
+      "imageAlt": "Botín negro de estilo western contemporáneo",
+      "description": "Botín de piel de cocodrilo de panza integrada, con tono negro y silueta contemporánea.",
+      "variants": [
+        {
+          "name": "Negro",
+          "color": "Negro"
+        }
+      ],
+      "colorDetail": "Negro",
+      "colorIds": [
+        "negro"
+      ],
+      "colorNames": [
+        "Negro"
+      ]
+    },
+    {
+      "id": "demo-cinturon-avestruz",
+      "skinIds": [
+        "avestruz"
+      ],
+      "name": "Cinturón Avestruz Camino Real",
+      "typeId": "cinturones",
+      "active": true,
+      "brand": "Almeida",
+      "sku": "MUESTRA-CIN-201",
+      "price": 2890,
+      "colorId": "cafe",
+      "colorName": "Café",
+      "colorHex": "#704322",
+      "material": "Piel de avestruz integrada",
+      "sizes": [
+        "30",
+        "32",
+        "34",
+        "36",
+        "38",
+        "40",
+        "42"
+      ],
+      "imageKey": "cinturon_01.png",
+      "imageAlt": "Cinturón western café con hebilla metálica",
+      "description": "Cinturón de piel de avestruz integrada, con acabado chocolate y hebilla metálica clásica.",
+      "variants": [
+        {
+          "name": "Chocolate",
+          "color": "Chocolate"
+        }
+      ],
+      "colorDetail": "Chocolate",
+      "colorIds": [
+        "cafe"
+      ],
+      "colorNames": [
+        "Café"
       ]
     }
   ]

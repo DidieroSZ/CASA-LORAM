@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Aladin&family=Dynalight&family=Mukta+Mahee:wght@200;300;400;500;600;700;800&display=swap');
+
 :root {
     color-scheme: dark;
     --color-brand-deep: #211710;
@@ -7,20 +9,23 @@
     --color-brand-canvas: #eee4d6;
     --color-brand-muted: #c7b9a8;
     --color-brand-panel: #302822;
-    --color-brand-panel-deep: #221a15;
+    --color-brand-panel-deep: #211710;
+    --color-black-deep: #111;
     --color-brand-leather: #8a6043;
     --color-brand-text-dark: #5d5147;
     --color-brand-line: rgb(247 239 227 / 18%);
     --color-brand-status-open: #b6c49a;
     --color-brand-status-open-bg: #354033;
     --color-brand-status-closed-bg: #49372d;
-    --font-primary: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
-    --font-secondary: 'Manrope', 'Segoe UI', Arial, sans-serif;
-    --font-accent: var(--font-primary);
+
+    --font-primary: "Mukta Mahee", sans-serif;
+    --font-secondary: "Mukta Mahee", sans-serif;
+    --font-accent: "Aladin", system-ui;
     --font-display: var(--font-primary);
     --font-body: var(--font-secondary);
     --font-navigation: 'Montserrat', var(--font-secondary);
     --page-gutter: clamp(1.25rem, 5vw, 5.5rem);
+
     --content-max-width: 75rem;
     --content-inline-edge: max(var(--page-gutter), calc((100% - var(--content-max-width)) / 2));
     font-family: var(--font-body);
@@ -37,20 +42,50 @@
 *::after {
     box-sizing: border-box;
 }
-
 html {
     min-width: 320px;
     scroll-behavior: smooth;
 }
-
 body {
     min-width: 320px;
     margin: 0;
     font-family: var(--font-secondary);
 }
 
-h1, h2, h3, h4, h5, h6 { font-family: var(--font-primary); font-weight: 500; line-height: 1.08; }
-h1 em, h2 em { font-family: var(--font-accent); font-style: italic; font-weight: 400; letter-spacing: 0; }
+.mukta-mahee-extralight {
+    font-family: "Mukta Mahee", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+}
+
+.dynalight-regular {
+    font-family: "Dynalight", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+.aladin-regular {
+    font-family: "Aladin", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--font-primary);
+    font-weight: bolder;
+    line-height: 1.08;
+}
+
+h1 em,
+h2 em {
+    font-family: var(--font-accent);
+    font-style: italic;
+    font-weight: 400;
+    letter-spacing: 0;
+}
 
 button,
 a {
@@ -109,5 +144,3 @@ img {
         scroll-behavior: auto !important;
     }
 }
-
-

@@ -1,5 +1,6 @@
 import { gsap } from "gsap";
 import catalog from "../data/skins.json";
+import { resolveSkinImages } from "./skin-image-assets.js";
 
 const CARE_SECTIONS = [
   ["cleaning", "Limpieza"],
@@ -23,7 +24,7 @@ const getCatalogEntries = () => {
     .filter((category) => category.skins.length > 0)
     .sort((a, b) => a.order - b.order);
 
-  return { categories, skins, images: catalog.images };
+  return { categories, skins, images: resolveSkinImages(catalog.images) };
 };
 
 const escapeHtml = (value = "") =>
@@ -139,7 +140,7 @@ const renderExplorer = (mount, data, activeCategoryId, activeSkinId) => {
       .map(
         (entry) => `
           <button class="skin-category-tab${entry.id === category.id ? " is-active" : ""}" type="button" role="tab" id="skin-category-${escapeHtml(entry.id)}" aria-selected="${entry.id === category.id}" aria-controls="skin-panel" tabindex="${entry.id === category.id ? "0" : "-1"}" data-category-id="${escapeHtml(entry.id)}">
-            <span>${escapeHtml(entry.name)}</span><small>${String(entry.skins.length).padStart(2, "0")}</small>
+            <span>${escapeHtml(entry.name)}</span><small></small>
           </button>`,
       )
       .join("")}
