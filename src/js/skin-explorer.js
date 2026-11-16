@@ -1,5 +1,6 @@
 import { gsap } from "gsap";
 import catalog from "../data/skins.json";
+import { resolveSkinImages } from "./skin-image-assets.js";
 
 const CARE_SECTIONS = [
   ["cleaning", "Limpieza"],
@@ -23,7 +24,7 @@ const getCatalogEntries = () => {
     .filter((category) => category.skins.length > 0)
     .sort((a, b) => a.order - b.order);
 
-  return { categories, skins, images: catalog.images };
+  return { categories, skins, images: resolveSkinImages(catalog.images) };
 };
 
 const escapeHtml = (value = "") =>

@@ -35,7 +35,7 @@
       "name": "Res",
       "categoryId": "traditional",
       "active": true,
-      "imageIds": [],
+      "imageIds": ["res"],
       "description": "Piel tradicional utilizada en diferentes artículos western. Su apariencia y textura pueden variar según el tratamiento y acabado aplicado.",
       "characteristics": [
         "Apariencia y textura variables según su tratamiento y acabado."
@@ -59,7 +59,7 @@
       "name": "Venado",
       "categoryId": "traditional",
       "active": true,
-      "imageIds": [],
+      "imageIds": ["venado"],
       "description": "Material de apariencia natural y tacto característico. Su presentación puede variar según el tratamiento y acabado de la piel.",
       "characteristics": [
         "Apariencia natural y tacto característico.",
@@ -110,7 +110,7 @@
       "name": "Pelo de vaca",
       "categoryId": "traditional",
       "active": true,
-      "imageIds": [],
+      "imageIds": ["pelo-vaca"],
       "description": "Material que conserva el pelo natural de la piel, proporcionando una apariencia y textura distintivas.",
       "characteristics": [
         "Conserva el pelo natural de la piel.",
@@ -138,7 +138,7 @@
       "name": "Pitón",
       "categoryId": "exotic",
       "active": true,
-      "imageIds": [],
+      "imageIds": ["piton"],
       "description": "Piel exótica reconocible por su patrón de escamas y su apariencia distintiva. Cada pieza presenta características naturales propias.",
       "characteristics": [
         "Patrón de escamas distintivo.",
@@ -163,7 +163,7 @@
       "name": "Cocodrilo (panza)",
       "categoryId": "exotic",
       "active": true,
-      "imageIds": [],
+      "imageIds": ["cocodrilo-panza"],
       "description": "Presentación de piel de cocodrilo correspondiente a la zona del vientre. Destaca por la disposición característica de sus escamas.",
       "characteristics": [
         "Corresponde a la zona del vientre.",
@@ -289,5 +289,41 @@
       }
     }
   ],
-  "images": []
+  "images": [
+    {
+      "id": "res",
+      "src": "../assets/PIELES/res.png",
+      "alt": "Textura de piel de res en tono café rojizo",
+      "skinId": "res",
+      "role": "texture"
+    },
+    {
+      "id": "venado",
+      "src": "../assets/PIELES/venado.png",
+      "alt": "Textura de piel de venado en tono café oscuro",
+      "skinId": "venado",
+      "role": "texture"
+    },
+    {
+      "id": "pelo-vaca",
+      "src": "../assets/PIELES/pelovaca.png",
+      "alt": "Piel de vaca con pelo natural en tonos blanco, negro y café",
+      "skinId": "pelo-de-vaca",
+      "role": "texture"
+    },
+    {
+      "id": "piton",
+      "src": "../assets/PIELES/python.png",
+      "alt": "Textura de escamas de piel de pitón",
+      "skinId": "piton",
+      "role": "texture"
+    },
+    {
+      "id": "cocodrilo-panza",
+      "src": "../assets/PIELES/cocodrilo.png",
+      "alt": "Textura de escamas de piel de cocodrilo, zona de la panza",
+      "skinId": "cocodrilo-panza",
+      "role": "texture"
+    }
+  ]
 }
